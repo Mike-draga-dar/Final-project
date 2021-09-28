@@ -13,6 +13,7 @@ function AllPosts(props) {
         return posts.map((eachPost) => {
             return (
                 <div key={eachPost._id}>
+                    <img src={eachPost.userId.imageUrl}></img>
                     <h2> {eachPost.userId.name}</h2>
                     <h3>{eachPost.title}</h3>
                     <p>{eachPost.post}</p>

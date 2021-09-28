@@ -13,7 +13,7 @@ function NewPost(props) {
         let res = await actions.createNewPost({ title, post })
         props.history.push('/all-posts')
     }
-
+    
 
     return (
         <div>

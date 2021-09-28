@@ -22,7 +22,7 @@ function AllPosts(props) {
     }
 
     return (
-        <div>
+        <div className="profileName">
             All Posts
             <ShowPosts />
         </div>

@@ -6,10 +6,10 @@ function Profile(props) {
     return (
         <div>
             Profile My name is
-            <div> Prop Driilling: {props.user?.name}</div>
+            <div className="profileName"> Prop Driilling: {props.user?.name}</div>
 
 
-            <div> Context: {user?.name}</div>
+            <div className="profileName"> Context: {user?.name}</div>
         </div>
     );
 }

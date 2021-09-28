@@ -21,6 +21,13 @@ h1{
 h4{
   color: #ddd;
 }
+.MyPosts{
+  color: yellow;
+}
+
+h3{
+  color: red;
+}
 .profileName{
   color: #ddd;
 }

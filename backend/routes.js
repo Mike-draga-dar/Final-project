@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 
 //http://localhost:5000/api/all-posts GET
 router.get('/all-posts', async (req, res) => {
-    let allPosts = await Post.find()
+    let allPosts = await Post.find().populate('userId')
     res.json(allPosts)
 })
 

@@ -13,6 +13,7 @@ function AllPosts(props) {
         return posts.map((eachPost) => {
             return (
                 <div key={eachPost._id}>
+                    <h2> {eachPost.userId.name}</h2>
                     <h3>{eachPost.title}</h3>
                     <p>{eachPost.post}</p>
                     <hr></hr>
@@ -20,7 +21,7 @@ function AllPosts(props) {
             )
         })
     }
-
+        console.log(posts)
     return (
         <div className="profileName">
             All Posts

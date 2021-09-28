@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Home from './components/Home'
 import AllPosts from './components/AllPosts'
 import NewPost from './components/NewPost'
-
+import Images from './components/Images';
 import Profile from './components/Profile'
 import Header from './components/Header'
 import TheContext from './TheContext';
@@ -32,6 +32,7 @@ function App() {
         <Route exact path="/all-posts" render={(props) => <AllPosts user={user} {...props} />} />
         <Route exact path="/new-post" render={(props) => <NewPost user={user} {...props} />} />
         <Route exact path="/profile" render={(props) => <Profile user={user} {...props} />} />
+        <Route exact path="/images" render={(props) => <Images user={user} {...props} />} />
       </Switch>
 
     </TheContext.Provider>

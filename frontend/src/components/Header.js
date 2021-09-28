@@ -38,6 +38,8 @@ function Header(props) {
                         <Link to="/profile">Profile</Link>
                     </> :
                     null}
+                
+                <Link to="/images">Images</Link>
 
             </nav>
         </>

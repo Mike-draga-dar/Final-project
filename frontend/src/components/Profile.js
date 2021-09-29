@@ -1,9 +1,11 @@
+
+
 import { useContext, useState, useEffect } from 'react';
 import TheContext from '../TheContext';
-import axios from 'axios'
-import actions from '../api'
+import actions from '../api';
 
 function Profile(props) {
+<<<<<<< HEAD
 
 
 
@@ -11,15 +13,26 @@ function Profile(props) {
 
     const [posts, setPosts] = useState([])
     
+=======
+    let { user } = useContext(TheContext)
+    const [myPosts, setMyPosts] = useState([])
+>>>>>>> 607f93ceddf22d95a0afeea560b82137b8fd0404
 
     useEffect(async () => {
-        let res = await actions.getAllPosts()
-        setPosts(res.data.reverse())
+        console.log('fire')
+        let res = await actions.getMyPosts()
+        console.log(res)
+        setMyPosts(res.data)
     }, [])
 
+<<<<<<< HEAD
 
     const ShowPosts = () => {
         return posts.map(eachPost => {
+=======
+    const ShowPosts = () => {
+        return myPosts.map(eachPost => {
+>>>>>>> 607f93ceddf22d95a0afeea560b82137b8fd0404
             return (
                 <>
                     <div>
@@ -34,8 +47,11 @@ function Profile(props) {
         })
     }
 
+<<<<<<< HEAD
 
     let { user } = useContext(TheContext)
+=======
+>>>>>>> 607f93ceddf22d95a0afeea560b82137b8fd0404
     return (
         <div>
             Profile My name is
@@ -43,10 +59,14 @@ function Profile(props) {
 
 
             <div className="profileName"> Context: {user?.name}</div>
+<<<<<<< HEAD
 
             <div className="MyPosts">
                 <h4>Here is my Post</h4>
 
+=======
+            <div className="profileName">
+>>>>>>> 607f93ceddf22d95a0afeea560b82137b8fd0404
                 <ShowPosts />
 
             </div>

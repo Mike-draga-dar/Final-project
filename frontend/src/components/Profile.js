@@ -13,7 +13,6 @@ function Profile(props) {
     }, [])
 
 
-
     const ShowPosts = () => {
         return posts.map(eachPost => {
             return (
@@ -46,4 +45,5 @@ function Profile(props) {
         </div>
     );
 }
+
 export default Profile;

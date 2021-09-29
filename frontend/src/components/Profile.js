@@ -1,49 +1,49 @@
-
-
 import { useContext, useState, useEffect } from 'react';
 import TheContext from '../TheContext';
-import actions from '../api';
+import axios from 'axios'
+import actions from '../api'
+
+
 
 function Profile(props) {
-    let { user } = useContext(TheContext)
-    const [myPosts, setMyPosts] = useState([])
-
+    const [posts, setPosts] = useState([])
     useEffect(async () => {
-        console.log('fire')
         let res = await actions.getMyPosts()
-        console.log(res)
-        setMyPosts(res.data)
+        setPosts(res.data.reverse())
     }, [])
 
+
+
     const ShowPosts = () => {
-        return myPosts.map(eachPost => {
+        return posts.map(eachPost => {
             return (
-                <>
-                    <div>
+                <div key={eachPost._id}>
+                    <div >
                         {eachPost.title}
                     </div>
                     <div>
                         {eachPost.post}
                     </div>
+                    <div>
+                        {eachPost.userId.name}
+                    </div>
                     <img src={eachPost.userId.imageUrl} />
-                </>
+                </div>
             )
         })
     }
-
+    console.log(posts)
+    let { user } = useContext(TheContext)
     return (
         <div>
             Profile My name is
             <div className="profileName"> Prop Driilling: {props.user?.name}</div>
-
-
             <div className="profileName"> Context: {user?.name}</div>
-            <div className="profileName">
+            <div className="MyPosts">
+                <h4>Here is my Post?</h4>
                 <ShowPosts />
-
             </div>
         </div>
     );
 }
-
 export default Profile;

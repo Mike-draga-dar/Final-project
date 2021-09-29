@@ -19,6 +19,16 @@ router.post('/new-post', authorize, async (req, res) => {
     res.json(post)
 })
 
+router.get('my-posts', authorize, async (req, res) => {
+
+    let myPosts = await Post.fing({ userId: res.locals.user._id }).populate('userId')
+
+    res.json(myPosts)
+
+})
+
+
+
 
 router.get('/get-user', authorize, async (req, res) => {
     let user = await User.findById(res.locals.user._id)

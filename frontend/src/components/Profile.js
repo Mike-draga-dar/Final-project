@@ -5,25 +5,26 @@ import actions from '../api'
 
 function Profile(props) {
 
-
-
-
-
-    const [posts, setPosts] = useState([])
+    let { user } = useContext(TheContext)
+    const [myPosts, setMyPosts] = useState([])
 
     useEffect(async () => {
-        let res = await actions.getAllPosts()
-        setPosts(res.data.reverse())
+        let res = await actions.getMyPosts()
+        setMyPosts(res.data)
     }, [])
 
 
-    const ShowMyPosts = () => {
-        return posts.map((eachPost) => {
+    const ShowPosts = () => {
+        return myPosts.map((eachPost) => {
             return (
-                <div key={eachPost._id}>
-                    <h3>{eachPost.title}</h3>
-                    <p>{eachPost.post}</p>
-                    <hr></hr>
+                <div>
+                    <div>
+                        {eachPost.title}
+                    </div>
+                    <div>
+                        {eachPost.post}
+                    </div>
+                    <img src="{eachPost.userId.imageUrl}" alt="" />
 
                 </div>
             )
@@ -32,7 +33,7 @@ function Profile(props) {
 
 
 
-    let { user } = useContext(TheContext)
+
     return (
         <div>
             Profile My name is
@@ -42,9 +43,9 @@ function Profile(props) {
             <div className="profileName"> Context: {user?.name}</div>
 
             <div className="MyPosts">
-                <h4>Here is my Post</h4>
 
-                <ShowMyPosts />
+
+                <ShowPosts />
 
             </div>
         </div>

@@ -29,6 +29,9 @@ function Profile(props) {
                         {eachPost.post}
                     </div>
                     <img src={eachPost.userId.imageUrl} />
+                    <div>
+                        <p>Likes: {eachPost.likes}</p>
+                    </div>
                 </>
             )
         })

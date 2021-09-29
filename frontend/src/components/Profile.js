@@ -1,38 +1,35 @@
+
+
 import { useContext, useState, useEffect } from 'react';
 import TheContext from '../TheContext';
-import axios from 'axios'
-import actions from '../api'
+import actions from '../api';
 
 function Profile(props) {
-
     let { user } = useContext(TheContext)
     const [myPosts, setMyPosts] = useState([])
 
     useEffect(async () => {
+        console.log('fire')
         let res = await actions.getMyPosts()
+        console.log(res)
         setMyPosts(res.data)
     }, [])
 
-
     const ShowPosts = () => {
-        return myPosts.map((eachPost) => {
+        return myPosts.map(eachPost => {
             return (
-                <div>
+                <>
                     <div>
                         {eachPost.title}
                     </div>
                     <div>
                         {eachPost.post}
                     </div>
-                    <img src="{eachPost.userId.imageUrl}" alt="" />
-
-                </div>
+                    <img src={eachPost.userId.imageUrl} />
+                </>
             )
         })
     }
-
-
-
 
     return (
         <div>
@@ -41,10 +38,7 @@ function Profile(props) {
 
 
             <div className="profileName"> Context: {user?.name}</div>
-
-            <div className="MyPosts">
-
-
+            <div className="profileName">
                 <ShowPosts />
 
             </div>

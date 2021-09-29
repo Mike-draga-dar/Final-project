@@ -10,6 +10,7 @@ function Profile(props) {
 
 
     const [posts, setPosts] = useState([])
+    
 
     useEffect(async () => {
         let res = await actions.getAllPosts()
@@ -17,20 +18,21 @@ function Profile(props) {
     }, [])
 
 
-    const ShowMyPosts = () => {
-        return posts.map((eachPost) => {
+    const ShowPosts = () => {
+        return posts.map(eachPost => {
             return (
-                <div key={eachPost._id}>
-                    <h3>{eachPost.title}</h3>
-                    <p>{eachPost.post}</p>
-                    <p>Likes:{eachPost.likes}</p>
-                    <hr></hr>
-
-                </div>
+                <>
+                    <div>
+                        {eachPost.title}
+                    </div>
+                    <div>
+                        {eachPost.post}
+                    </div>
+                    <img src={eachPost.userId.imageUrl} />
+                </>
             )
         })
     }
-
 
 
     let { user } = useContext(TheContext)
@@ -45,7 +47,7 @@ function Profile(props) {
             <div className="MyPosts">
                 <h4>Here is my Post</h4>
 
-                <ShowMyPosts />
+                <ShowPosts />
 
             </div>
         </div>

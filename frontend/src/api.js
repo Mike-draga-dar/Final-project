@@ -27,6 +27,9 @@ const actions = {
     },
     likePost: async (postId) => {
         return await axios.post(`${SERVER_URL}/like-post`, { postId }, createHeader())
+    },
+    getImages: async () => {
+        return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     }
 }
 

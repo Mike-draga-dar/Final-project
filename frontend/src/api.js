@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let SERVER_URL = process.env.NODE_ENV === 'development' ? `http://localhost:5000/api` : `https://ourlivelink.herokuapp.com/api`
+let SERVER_URL = process.env.NODE_ENV === 'development' ? `http://localhost:5000/api` : `https://dar-mik-dra.herokuapp.com/api`
 
 const createHeader = () => { //Sends my token to the backend
     return { headers: { authorization: `Bearer ${localStorage.getItem('token')}` } }

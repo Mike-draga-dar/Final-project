@@ -31,6 +31,9 @@ h3{
 .profileName{
   color: #ddd;
 }
+.drinks{
+  color: #eee;
+}
 
 .App{
   display:flex;

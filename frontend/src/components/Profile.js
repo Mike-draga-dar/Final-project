@@ -23,6 +23,7 @@ function Profile(props) {
                 <div key={eachPost._id}>
                     <h3>{eachPost.title}</h3>
                     <p>{eachPost.post}</p>
+                    <p>Likes:{eachPost.likes}</p>
                     <hr></hr>
 
                 </div>

@@ -24,7 +24,11 @@ router.get('/get-user', authorize, async (req, res) => {
     let user = await User.findById(res.locals.user._id)
     res.json(user)
 })
-
+router.post('/like-post', authorize, async (req, res) => {
+    console.log('did i  hit this!?', req.body)
+    let updatedPost = await Post.findByIdAndUpdate(req.body.postId, { $inc: { likes: 1 } }, { new: true }).populate('userId')
+    res.json(updatedPost)
+})
 
 router.post('/authenticate', async (req, res) => {
     let user = await User.findOne({ email: req.body.email })

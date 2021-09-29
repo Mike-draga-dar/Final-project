@@ -21,6 +21,9 @@ const actions = {
     },
     getUser: async () => {
         return await axios.get(`${SERVER_URL}/get-user`, createHeader())
+    },
+    likePost: async (postId) => {
+        return await axios.post(`${SERVER_URL}/like-post`, { postId }, createHeader())
     }
 }
 

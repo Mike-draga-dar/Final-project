@@ -14,6 +14,7 @@ function Images() {
 
     }, [])
 
+    console.log(images)
 
     return (
         <div>

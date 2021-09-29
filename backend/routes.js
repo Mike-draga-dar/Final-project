@@ -30,6 +30,7 @@ router.get('/my-posts', authorize, async (req, res) => {
 
 
 
+
 router.get('/get-user', authorize, async (req, res) => {
     let user = await User.findById(res.locals.user._id)
     res.json(user)

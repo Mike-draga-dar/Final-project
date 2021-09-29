@@ -1,38 +1,25 @@
-import React from 'react';
-import axios from 'axios';
-import { useState, useEffect } from 'react-router-dom'
-
-
-
-
-
-// const [images, setImages] = useState("")
-
-
-
-// useEffect(async () => {
-//     let res = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php');
-//     setImages(res.data)
-// })
-
-axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php').then((res) => {
-    console.log(res.data)
-})
+import actions from "../api";
+import { useState, useEffect } from "react"
+import axios from "axios";
 
 
 
 function Images() {
+    const [images, setImages] = useState({});
 
+    useEffect(async () => {
 
+        let res = await actions.getImages()
+        setImages(res.data)
 
+    }, [])
 
 
     return (
         <div>
-            <h1> Random Images of Cocktails </h1>
-
+            <img src={images.drinks?.[0]?.strDrinkThumb} alt="random Drinks" />
         </div>
-    );
-
+    )
 }
+
 export default Images;

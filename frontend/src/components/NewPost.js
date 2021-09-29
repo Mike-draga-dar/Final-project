@@ -8,18 +8,18 @@ function NewPost(props) {
 
     let [title, setTitle] = useState('')
     let [post, setPost] = useState('')
-
+    let [image, setImage] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault()
-        let res = await actions.createNewPost({ title, post })
+        let res = await actions.createNewPost({ title, post, image })
         props.history.push('/all-posts')
     }
 
     // Image Upload
     const uploadedImage = React.useRef(null);
 
-    const handleImageUpload = e => {
+    const handleImageUpload = async e => {
       const [file] = e.target.files;
       if (file) {
         const reader = new FileReader();
@@ -29,6 +29,11 @@ function NewPost(props) {
             current.src = e.target.result;
         }
         reader.readAsDataURL(file);
+        const formData = new FormData()
+        formData.append("file", file)
+        formData.append("upload_preset", "rjpjmc9k")
+        let res = await axios.post('https://iron-cors-anywhere.herokuapp.com/https://api.cloudinary.com/v1_1/tresamigos/upload', formData);
+        setImage(res.data.secure_url)
       }
     };
     

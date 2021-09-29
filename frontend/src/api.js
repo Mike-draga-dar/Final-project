@@ -12,8 +12,8 @@ const actions = {
     getAllPosts: async () => {
         return await axios.get(`${SERVER_URL}/all-posts`, createHeader())
     },
-    createNewPost: async ({ title, post }) => {
-        return await axios.post(`${SERVER_URL}/new-post`, { title, post }, createHeader())
+    createNewPost: async ({ title, post, image }) => {
+        return await axios.post(`${SERVER_URL}/new-post`, { title, post, image }, createHeader())
     },
     authenticate: async (user) => {
         let res = await axios.post(`${SERVER_URL}/authenticate`, user)

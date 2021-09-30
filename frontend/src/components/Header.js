@@ -29,7 +29,7 @@ function Header(props) {
             </div>
 
             <header>
-                <img src={logo} />
+                <div className="logo"><img src={logo} /></div>
             </header>
 
             <nav>
@@ -46,7 +46,7 @@ function Header(props) {
             </nav>
 
             <div className="header">
-                <img src={headerImg} /><br></br>
+                <img src={headerImg} className="logo" /><br></br>
                 <br></br>
                 <div className="tagline">
                 The perfect place for you to <strong>create</strong>, <strong>find</strong> and <strong>share</strong> your favorite drink recipes.

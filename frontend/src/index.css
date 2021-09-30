@@ -5,9 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:url("https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/galleries/15/12/himitsu-3.jpg");
+  /* background:url("https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/galleries/15/12/himitsu-3.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 code {

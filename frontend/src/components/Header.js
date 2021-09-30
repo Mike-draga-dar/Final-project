@@ -17,7 +17,7 @@ function Header(props) {
     return (
         <>
             <header>
-                <h1>Something is cooking here  🥤🍹🧉🥃🍸🧊🍺 </h1>
+                <h1>Lets Sip</h1>
                 <div id="auth">
                     {user?.name ?
                         <div>

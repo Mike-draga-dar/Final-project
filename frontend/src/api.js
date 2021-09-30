@@ -12,9 +12,9 @@ const actions = {
     getAllDrinks: async () => {
         return await axios.get(`${SERVER_URL}/all-drinks`, createHeader())
     },
-    createNewPost: async ({ title, post, image }) => {
-        return await axios.post(`${SERVER_URL}/new-drink`, { title, post, image }, createHeader())
-        
+    createNewPost: async ({ title, post, instructions, image }) => {
+        return await axios.post(`${SERVER_URL}/new-drink`, { title, post, instructions, image }, createHeader())
+
     },
     authenticate: async (user) => {
         let res = await axios.post(`${SERVER_URL}/authenticate`, user)
@@ -26,11 +26,14 @@ const actions = {
     getMyPosts: async () => {
         return await axios.get(`${SERVER_URL}/my-posts`, createHeader())
     },
-    likePost: async (postId) => {
-        return await axios.post(`${SERVER_URL}/like-post`, { postId }, createHeader())
+    likePost: async (drinkId) => {
+        return await axios.post(`${SERVER_URL}/like-post`, { drinkId }, createHeader())
     },
     getRandomDrinks: async () => {
         return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    },
+    getDrinks: async () => {
+        return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s')
     }
 }
 

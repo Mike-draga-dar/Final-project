@@ -24,6 +24,9 @@ function Profile(props) {
                         {eachPost.post}
                     </div>
                     <div>
+                        {eachPost.instructions}
+                    </div>
+                    <div>
                         {eachPost.userId.name}
                     </div>
                     <img src={eachPost.userId.imageUrl} />

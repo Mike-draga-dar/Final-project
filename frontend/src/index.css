@@ -1,50 +1,13 @@
-body {
-  margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background:url("https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/galleries/15/12/himitsu-3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-h1{
-  color: #ddd;
-}
-
-h4{
-  color: #ddd;
-}
-.MyPosts{
-  color: yellow;
-}
-
-h3{
-  color: red;
-}
-.profileName{
-  color: #ddd;
-}
-.drinks{
-  color: #eee;
-}
-
-.App{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-nav{
-  display:flex;
+nav {
+  display: flex;
   width: 100vw;
-  justify-content:space-around;
+  justify-content: space-around;
   margin-bottom: 50px;
 }
 
@@ -53,15 +16,15 @@ nav a {
   width: 33vw;
   text-align: center;
   padding: 2rem;
-  background: #eee
+  background: #eee;
 }
 
 nav a:hover {
-  background: #ddd
+  background: #ddd;
 }
 
-#auth{
+#auth {
   position: absolute;
   top: 0;
-  right:0;
+  right: 0;
 }

@@ -13,20 +13,32 @@ body {
   max-width: 1000px;
 }
 
+/* Red Header Box */
+
 /* Profile Page */
 
 .profile {
   text-align: center;
 }
 
-.profile h1 {
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 5px;
-}
-
 .profile-picture {
   border-radius: 50%;
   width: 150px;
   height: 150px;
+}
+
+.profile h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 2em;
+}
+
+.drink-title {
+  border-bottom: 3px solid #6dafb8;
+  padding: 20px;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

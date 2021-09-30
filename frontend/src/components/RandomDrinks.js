@@ -17,7 +17,7 @@ function RandomImages() {
     console.log(images)
 
     return (
-        <div>
+        <div className="container">
 
             <img src={images.drinks?.[0]?.strDrinkThumb} alt="random Drinks" />
 

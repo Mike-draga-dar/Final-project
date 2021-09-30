@@ -40,7 +40,7 @@ function NewPost(props) {
     
 
     return (
-        <div>
+        <div className="container">
             <label>New Post</label>
             <form onSubmit={handleSubmit}>
                 <input onChange={e => setTitle(e.target.value)} type="text" placeholder="Drink Name" /><br></br>

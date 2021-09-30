@@ -26,6 +26,11 @@ function Profile(props) {
                     <div>
                         {eachPost.instructions}
                     </div>
+                    <div>
+                    {console.log(eachPost)}
+                       <img src={eachPost.image} alt= "DrinkImage" width="20%" height="20%"></img>
+                    </div>
+
                 </div>
             )
         })

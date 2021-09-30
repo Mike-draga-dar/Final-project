@@ -4,14 +4,14 @@ const Post = require('./models/Post');
 const User = require('./models/User');
 const jwt = require('jsonwebtoken')
 
-//http://localhost:5000/api/all-posts GET
-router.get('/all-posts', async (req, res) => {
+//http://localhost:5000/api/all-drinks GET
+router.get('/all-drinks', async (req, res) => {
     let allPosts = await Post.find().populate('userId')
     res.json(allPosts)
 })
 
-//http://localhost:5000/api/new-post POST
-router.post('/new-post', authorize, async (req, res) => {
+//http://localhost:5000/api/new-drink POST
+router.post('/new-drink', authorize, async (req, res) => {
     //Everyime you put authorize as middleware you'll have the user as res.locals.user
     let newPost = req.body
     newPost.userId = res.locals.user._id //How we add the userId to the post document

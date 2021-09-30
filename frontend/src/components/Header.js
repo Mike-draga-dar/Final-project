@@ -31,15 +31,15 @@ function Header(props) {
 
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/all-posts">All</Link>
+                <Link to="/all-drinks">All Drinks</Link>
                 {user?.name ?
                     <>
-                        <Link to="/new-post">New</Link>
+                        <Link to="/new-drink">New Drink</Link>
                         <Link to="/profile">Profile</Link>
                     </> :
                     null}
                 
-                <Link to="/images">Images</Link>
+                <Link to="/random-drinks">Random Drinks</Link>
 
             </nav>
         </>

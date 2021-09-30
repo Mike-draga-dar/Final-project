@@ -13,7 +13,7 @@ function NewPost(props) {
     const handleSubmit = async e => {
         e.preventDefault()
         let res = await actions.createNewPost({ title, post, image })
-        props.history.push('/all-posts')
+        props.history.push('/all-drinks')
     }
 
     // Image Upload

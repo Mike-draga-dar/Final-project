@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import TheContext from '../TheContext';
 import Auth from './Auth'
 import logo from '../../src/logo.png'
+import headerImg from '../../src/headerimage.png'
 
 
 
@@ -42,8 +43,16 @@ function Header(props) {
                     null}
                 
                 <Link to="/random-drinks">Random Drinks</Link>
-
             </nav>
+
+            <div className="header">
+                <img src={headerImg} /><br></br>
+                <br></br>
+                <div className="tagline">
+                The perfect place for you to <strong>create</strong>, <strong>find</strong> and <strong>share</strong> your favorite drink recipes.
+                </div>
+            </div>
+            <br></br><br></br>
         </div>
     );
 }

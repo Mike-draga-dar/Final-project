@@ -5,10 +5,61 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Google Login Auth */
+
+#auth {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* Header */
 
 header {
   text-align: center;
+}
+
+.header {
+}
+
+.header img {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.tagline {
+  background-color: #6dafb8;
+  padding: 70px;
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+}
+
+/* Nav Bar */
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+nav a {
+  border-right: 2px solid #fff;
+  width: 33vw;
+  text-align: center;
+  padding: 2rem;
+  color: #000;
+  text-decoration: none;
+}
+
+nav a:not(:last-child) {
+  border-right: solid 2px #6dafb8; /* This will not give border to last li element */
+}
+
+nav a:hover {
+  font-weight: 500;
 }
 
 /* Content */

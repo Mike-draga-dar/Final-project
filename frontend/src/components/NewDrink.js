@@ -42,8 +42,8 @@ function NewPost(props) {
         <div>
             <label>New Post</label>
             <form onSubmit={handleSubmit}>
-                <input onChange={e => setTitle(e.target.value)} type="text" placeholder="Title" /><br></br>
-                <input onChange={e => setPost(e.target.value)} type="text" placeholder="Post" /><br></br>
+                <input onChange={e => setTitle(e.target.value)} type="text" placeholder="Drink Name" /><br></br>
+                <input onChange={e => setPost(e.target.value)} type="text" placeholder="Ingredients" /><br></br>
                 <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} />
                 <div style={{height: "150px", width: "150px", border: "2px dashed black"}}>
                     <img ref={uploadedImage} style={{width: "150px", height: "150px", position: "absolute" }} />

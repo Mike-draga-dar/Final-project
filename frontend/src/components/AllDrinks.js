@@ -37,8 +37,8 @@ function AllDrinks(props) {
     }
     console.log(drinks)
     return (
-        <div className="profileName">
-            All Drinks
+        <div className="container">
+            <div className="red-header"><p>All Drinks</p></div>
             <ShowPosts />
         </div>
     );

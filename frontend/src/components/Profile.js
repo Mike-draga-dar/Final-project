@@ -27,23 +27,28 @@ function Profile(props) {
                         {eachPost.instructions}
                     </div>
                     <div>
-                        {eachPost.userId.name}
+                    {!eachPost.image? null :(
+                       <img src={eachPost.image} alt= "DrinkImage" width="20%" height="20%"></img>
+                    )}
                     </div>
-                    <img src={eachPost.userId.imageUrl} />
+
                 </div>
             )
         })
     }
-    console.log(posts)
+
     let { user } = useContext(TheContext)
     return (
-        <div>
-            Profile My name is
-            <div className="profileName"> Prop Driilling: {props.user?.name}</div>
-            <div className="profileName"> Context: {user?.name}</div>
-            <div className="MyPosts">
-                <h4>Here is my Post?</h4>
-                <ShowPosts />
+        <div className="container">
+            <div className="red-header"><p>Profile</p></div>
+            <br></br>
+            <div className="profile">
+                <img src={props.user?.imageUrl} className="profile-picture" /><br></br>
+                <h1>{props.user?.name}</h1>
+                <div className="drink-title">Drinks</div>
+                <div className="MyPosts">
+                    <ShowPosts />
+                </div>
             </div>
         </div>
     );

@@ -40,8 +40,8 @@ function NewPost(props) {
     
 
     return (
-        <div>
-            <label>New Post</label>
+        <div className="container">
+            <div className="red-header"><p>New Drink</p></div>
             <form onSubmit={handleSubmit}>
                 <input onChange={e => setTitle(e.target.value)} type="text" placeholder="Drink Name" /><br></br>
                 <input onChange={e => setPost(e.target.value)} type="text" placeholder="Ingredients" /><br></br>

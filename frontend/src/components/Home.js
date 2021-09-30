@@ -34,30 +34,8 @@ function Home() {
 
 
     return (
-        <div>
-            <h1>New Drinks</h1>
-            <hr />
-            <h1>View More</h1>
-
-            <div>
-
-                <h3>{drinks.drinks?.[1]?.strDrink}</h3>
-                <h3>{drinks.drinks?.[1]?.strGlass}</h3>
-                <h3>{drinks.drinks?.[1]?.strInstructions}</h3>
-                <h2> {drinks.drinks?.[1]?.strIngredient1}</h2>
-                <h2> {drinks.drinks?.[1]?.strIngredient2}</h2>
-                <h2> {drinks.drinks?.[1]?.strIngredient3}</h2>
-                <h2> {drinks.drinks?.[1]?.strIngredient4}</h2>
-                <h2> {drinks.drinks?.[1]?.strIngredient5}</h2>
-
-                <img src={drinks.drinks?.[1]?.strDrinkThumb} alt="Drinks" />
-
-
-                <ShowDrinks />
-
-            </div>
-
-
+        <div className="container">
+            Home
         </div>
     );
 }

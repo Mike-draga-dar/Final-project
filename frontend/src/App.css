@@ -24,6 +24,13 @@ body {
   background-repeat: no-repeat;
 }
 
+.red-header p {
+  text-align: right;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding-right: 25px;
+}
+
 /* Profile Page */
 
 .profile {

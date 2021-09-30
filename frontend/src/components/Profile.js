@@ -40,8 +40,8 @@ function Profile(props) {
     let { user } = useContext(TheContext)
     return (
         <div className="container">
-            <div className="red-header">Profile</div>
-
+            <div className="red-header"><p>Profile</p></div>
+            <br></br>
             <div className="profile">
                 <img src={props.user?.imageUrl} className="profile-picture" /><br></br>
                 <h1>{props.user?.name}</h1>

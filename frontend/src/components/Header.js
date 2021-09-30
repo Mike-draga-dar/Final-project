@@ -14,7 +14,7 @@ function Header(props) {
     let { user, setUser, getUser } = useContext(TheContext)
 
     return (
-        <>
+        <div className="container">
             <header>
                 <h1>Lets Sip</h1>
                 <div id="auth">
@@ -42,7 +42,7 @@ function Header(props) {
                 <Link to="/random-drinks">Random Drinks</Link>
 
             </nav>
-        </>
+        </div>
     );
 }
 

@@ -4,16 +4,17 @@ import axios from "axios";
 
 
 
-function Images() {
+function RandomImages() {
     const [images, setImages] = useState({});
 
     useEffect(async () => {
 
-        let res = await actions.getImages()
+        let res = await actions.getRandomDrinks()
         setImages(res.data)
 
     }, [])
 
+    console.log(images)
 
     return (
         <div>
@@ -32,4 +33,4 @@ function Images() {
     )
 }
 
-export default Images;
+export default RandomImages;

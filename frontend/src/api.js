@@ -9,11 +9,12 @@ const createHeader = () => { //Sends my token to the backend
 
 //THIS IS WHERE WE CONNECT TO THE BACKEND >> OUR FRONT END ROUTES
 const actions = {
-    getAllPosts: async () => {
-        return await axios.get(`${SERVER_URL}/all-posts`, createHeader())
+    getAllDrinks: async () => {
+        return await axios.get(`${SERVER_URL}/all-drinks`, createHeader())
     },
     createNewPost: async ({ title, post, image }) => {
-        return await axios.post(`${SERVER_URL}/new-post`, { title, post, image }, createHeader())
+        return await axios.post(`${SERVER_URL}/new-drink`, { title, post, image }, createHeader())
+        
     },
     authenticate: async (user) => {
         let res = await axios.post(`${SERVER_URL}/authenticate`, user)
@@ -28,7 +29,7 @@ const actions = {
     likePost: async (postId) => {
         return await axios.post(`${SERVER_URL}/like-post`, { postId }, createHeader())
     },
-    getImages: async () => {
+    getRandomDrinks: async () => {
         return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     }
 }

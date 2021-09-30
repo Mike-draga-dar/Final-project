@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import actions from '../api'
 
-function AllPosts(props) {
+function AllDrinks(props) {
     const [posts, setPosts] = useState([])
 
     useEffect(async () => {
-        let res = await actions.getAllPosts()
+        let res = await actions.getAllDrinks()
         setPosts(res.data.reverse())
     }, [])
 
@@ -43,4 +43,4 @@ function AllPosts(props) {
     );
 }
 
-export default AllPosts;
+export default AllDrinks;

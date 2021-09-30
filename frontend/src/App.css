@@ -5,6 +5,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Header */
+
+header {
+  text-align: center;
+}
+
 /* Content */
 
 .container {

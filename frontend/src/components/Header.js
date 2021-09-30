@@ -2,6 +2,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { useContext } from 'react';
 import TheContext from '../TheContext';
 import Auth from './Auth'
+import logo from '../../src/logo.png'
 
 
 
@@ -15,18 +16,19 @@ function Header(props) {
 
     return (
         <div className="container">
-            <header>
-                <h1>Lets Sip</h1>
-                <div id="auth">
-                    {user?.name ?
-                        <div>
-                            <h4>{user?.name}</h4>
-                            <button onClick={logOut} >Log Out</button>
-                        </div>
-                        : <Auth getUser={getUser} />
-                    }
-                </div>
 
+            <div id="auth">
+                {user?.name ?
+                    <div>
+                        <h4>{user?.name}</h4>
+                        <button onClick={logOut} >Log Out</button>
+                    </div>
+                    : <Auth getUser={getUser} />
+                }
+            </div>
+
+            <header>
+                <img src={logo} />
             </header>
 
             <nav>

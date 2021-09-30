@@ -1,9 +1,3 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 nav {
   display: flex;
   width: 100%;
@@ -12,15 +6,20 @@ nav {
 }
 
 nav a {
-  border: 1px solid black;
+  border-right: 2px solid #fff;
   width: 33vw;
   text-align: center;
   padding: 2rem;
-  background: #eee;
+  color: #000;
+  text-decoration: none;
+}
+
+nav a:not(:last-child) {
+  border-right: solid 2px #6dafb8; /* This will not give border to last li element */
 }
 
 nav a:hover {
-  background: #ddd;
+  font-weight: 500;
 }
 
 #auth {

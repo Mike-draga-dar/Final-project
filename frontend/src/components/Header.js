@@ -5,6 +5,7 @@ import Auth from './Auth'
 
 
 
+
 function Header(props) {
     const logOut = () => {
         localStorage.removeItem('token')
@@ -38,8 +39,9 @@ function Header(props) {
                         <Link to="/profile">Profile</Link>
                     </> :
                     null}
-                
+
                 <Link to="/images">Images</Link>
+                <Link to="AllCocktails">All Cocktails</Link>
 
             </nav>
         </>

@@ -27,8 +27,9 @@ function Profile(props) {
                         {eachPost.instructions}
                     </div>
                     <div>
-                    {console.log(eachPost)}
+                    {!eachPost.image? null :(
                        <img src={eachPost.image} alt= "DrinkImage" width="20%" height="20%"></img>
+                    )}
                     </div>
 
                 </div>

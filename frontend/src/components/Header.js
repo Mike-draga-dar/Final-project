@@ -46,7 +46,7 @@ function Header(props) {
             </nav>
 
             <div className="header">
-                <img src={headerImg} className="logo" /><br></br>
+                <img src={headerImg} /><br></br>
                 <br></br>
                 <div className="tagline">
                 The perfect place for you to <strong>create</strong>, <strong>find</strong> and <strong>share</strong> your favorite drink recipes.

@@ -5,12 +5,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Links */
+a {
+  font-weight: 500;
+  color: #fb5e2f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6dafb8;
+}
+
 /* Google Login Auth */
 
 #auth {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 25px;
 }
 
 /* Header */
@@ -114,4 +125,14 @@ nav a:hover {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #dfdfdf;
+  text-align: center;
 }

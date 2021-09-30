@@ -22,7 +22,7 @@ function Header(props) {
                 {user?.name ?
                     <div>
                         <h4>{user?.name}</h4>
-                        <button onClick={logOut} >Log Out</button>
+                        <button onClick={logOut}>Log Out</button>
                     </div>
                     : <Auth getUser={getUser} />
                 }

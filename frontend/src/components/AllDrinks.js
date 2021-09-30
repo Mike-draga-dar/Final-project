@@ -26,6 +26,7 @@ function AllDrinks(props) {
                     <h2> {eachPost.userId.name}</h2>
                     <h3>{eachPost.title}</h3>
                     <p>{eachPost.post}</p>
+                    <p>{eachPost.instructions}</p>
                     <img src={eachPost.image}></img>
                     <h3>Likes: {eachPost.likes}</h3>
                     <button onClick={(e) => handleClick(eachPost._id,i)} >Like 👍</button>

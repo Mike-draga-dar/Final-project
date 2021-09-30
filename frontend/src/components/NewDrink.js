@@ -7,12 +7,13 @@ import actions from '../api';
 function NewPost(props) {
 
     let [title, setTitle] = useState('')
+    let [instructions, setInstructions] = useState('')
     let [post, setPost] = useState('')
     let [image, setImage] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault()
-        let res = await actions.createNewPost({ title, post, image })
+        let res = await actions.createNewPost({ title, post, instructions, image })
         props.history.push('/all-drinks')
     }
 
@@ -44,6 +45,7 @@ function NewPost(props) {
             <form onSubmit={handleSubmit}>
                 <input onChange={e => setTitle(e.target.value)} type="text" placeholder="Drink Name" /><br></br>
                 <input onChange={e => setPost(e.target.value)} type="text" placeholder="Ingredients" /><br></br>
+                <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" /><br></br>
                 <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} />
                 <div style={{height: "150px", width: "150px", border: "2px dashed black"}}>
                     <img ref={uploadedImage} style={{width: "150px", height: "150px", position: "absolute" }} />

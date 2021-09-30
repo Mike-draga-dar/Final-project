@@ -14,6 +14,15 @@ body {
 }
 
 /* Red Header Box */
+.red-header {
+  width: 350px;
+  height: 80px;
+  border: 3px solid #fb5e2f;
+  background-image: url("../src/star.png");
+  background-position: left;
+  background-size: 150px;
+  background-repeat: no-repeat;
+}
 
 /* Profile Page */
 

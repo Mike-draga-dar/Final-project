@@ -18,7 +18,7 @@ function RandomImages() {
 
     return (
         <div className="container">
-
+            <div className="red-header"><p>Profile</p></div>
             <img src={images.drinks?.[0]?.strDrinkThumb} alt="random Drinks" />
 
 

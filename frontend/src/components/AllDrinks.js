@@ -22,8 +22,8 @@ function AllDrinks(props) {
         return drinks.map((eachDrink, i) => {
             return (
                 <div key={eachDrink._id}>
-                    <img src={eachDrink.userId.imageUrl}></img>
-                    <h2> {eachDrink.userId.name}</h2>
+                    <img src={eachDrink.userId?.imageUrl}></img>
+                    <h2> {eachDrink.userId?.name}</h2>
                     <h3>{eachDrink.name}</h3>
                     <p>{eachDrink.drink}</p>
                     <p>{eachDrink.instructions}</p>
@@ -38,7 +38,8 @@ function AllDrinks(props) {
     console.log(drinks)
     return (
         <div className="container">
-            <div className="red-header"><p>All Drinks</p></div>
+            <div className="red-header"><p>All Drinks</p></div><br></br>
+            <br></br>
             <ShowPosts />
         </div>
     );

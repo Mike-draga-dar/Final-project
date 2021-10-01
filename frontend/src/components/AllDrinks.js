@@ -38,7 +38,8 @@ function AllDrinks(props) {
         console.log(posts)
     return (
         <div className="container">
-            <div className="red-header"><p>All Drinks</p></div>
+            <div className="red-header"><p>All Drinks</p></div><br></br>
+            <br></br>
             <ShowPosts />
         </div>
     );

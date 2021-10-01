@@ -137,6 +137,23 @@ nav a:hover {
   letter-spacing: 2px;
 }
 
+/* Input & Forms */
+
+input {
+  border: 3px solid #6dafb8;
+  font-size: 1em;
+  padding: 20px;
+}
+
+.new-drink-title {
+  border-bottom: 3px solid #6dafb8;
+  padding: 20px;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 /* Footer */
 
 footer {

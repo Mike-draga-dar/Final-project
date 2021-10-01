@@ -10,6 +10,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import TheContext from './TheContext';
 import actions from './api';
+import CocktailDetails from './components/CocktailDetails';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Route exact path="/new-drink" render={(props) => <NewPost user={user} {...props} />} />
         <Route exact path="/profile" render={(props) => <Profile user={user} {...props} />} />
         <Route exact path="/random-drinks" render={(props) => <RandomDrinks user={user} {...props} />} />
+        <Route exact path="/drinks/:drinkId" render={(props) => <CocktailDetails user={user} {...props} />} />
       </Switch>
       <Footer />
 

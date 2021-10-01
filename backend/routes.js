@@ -28,8 +28,11 @@ router.get('/my-drinks', authorize, async (req, res) => {
 
 })
 
-
-
+router.post('/getOneCocktail', authorize, async (req, res) => {
+    console.log('did i  hit this!?', req.body)
+    let getOneCocktail = await Drink.findById(req.body.drinkId)
+    res.json(getOneCocktail)
+})
 
 
 router.get('/get-user', authorize, async (req, res) => {

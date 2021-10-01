@@ -34,6 +34,9 @@ const actions = {
     },
     getDrinks: async () => {
         return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
+    },
+    getOneCocktail: async (drinkId) => {
+        return await axios.post(`${SERVER_URL}/getOneCocktail`, { drinkId }, createHeader())
     }
 }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState } from "react"
 import axios from 'axios';
 import actions from '../api';
@@ -26,7 +25,7 @@ function Home() {
             < ul >
                 {drinks.map((drink) => {
                     return <Link key={drink._id} to={`/drinks/${drink._id}`}>
-                        <li onClick={CocktailDetails}>
+                        <li >
                             {drink.name}
                             <img src={drink.image} alt="image" width="200px" />
 

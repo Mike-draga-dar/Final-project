@@ -14,28 +14,26 @@ function Home() {
 
     useEffect(async () => {
         let res = await actions.getAllDrinks()
-        console.log(res.data)
+        // console.log(res.data)
         setDrinks(res.data)
     }, [])
 
-    console.log(drinks)
+    // console.log(drinks)
 
     const ShowDrinks = () => {
         return (
 
             < ul >
-                {
-                    drinks.map((drink) => {
-                        return <Link key={drink._id} to={`/drinks/${drink._id}`}>
-                            <li>
-                                {drink.name}
-                                <img src={drink.image} alt="image" width="200px" />
+                {drinks.map((drink) => {
+                    return <Link key={drink._id} to={`/drinks/${drink._id}`}>
+                        <li onClick={CocktailDetails}>
+                            {drink.name}
+                            <img src={drink.image} alt="image" width="200px" />
 
-
-                                <hr />
-                            </li>
-                        </Link>
-                    })
+                            <hr />
+                        </li>
+                    </Link>
+                })
                 }
             </ul >
         )

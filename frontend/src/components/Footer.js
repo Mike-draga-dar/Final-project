@@ -15,12 +15,12 @@ function Footer(props) {
     let { user, setUser, getUser } = useContext(TheContext)
 
     return (
-            <footer>
-                <div className="container">
+        <footer>
+            <div className="container">
                 <div className="logo"><img src={footerLogo}></img></div>
-                    <p>Created by <Link to="https://github.com/darioformoso" target="_blank">Dario</Link>, <Link to="https://github.com/DraganCicic" target="_blank">Dragan</Link> & <Link to="https://github.com/michaelporreca" target="_blank">Michael</Link></p>
-                </div>
-            </footer>
+                <p>Created by <Link to="https://github.com/darioformoso" target="_blank">Dario</Link>, <Link to="https://github.com/DraganCicic" target="_blank">Dragan</Link> & <Link to="https://github.com/michaelporreca" target="_blank">Michael</Link></p>
+            </div>
+        </footer>
     );
 }
 

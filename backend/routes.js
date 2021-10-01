@@ -1,29 +1,30 @@
 const express = require('express');
 const router = express.Router()
-const Post = require('./models/Post');
+const Drink = require('./models/Drink');
 const User = require('./models/User');
 const jwt = require('jsonwebtoken')
 
 //http://localhost:5000/api/all-drinks GET
 router.get('/all-drinks', async (req, res) => {
-    let allPosts = await Post.find().populate('userId')
-    res.json(allPosts)
+    let allDrinks = await Drink.find().populate('userId')
+    console.log(allDrinks, "vnfkjvbdfk")
+    res.json(allDrinks)
 })
 
 //http://localhost:5000/api/new-drink POST
 router.post('/new-drink', authorize, async (req, res) => {
     //Everyime you put authorize as middleware you'll have the user as res.locals.user
-    let newPost = req.body
-    newPost.userId = res.locals.user._id //How we add the userId to the post document
-    let post = await Post.create(newPost)
-    res.json(post)
+    let newDrink = req.body
+    newDrink.userId = res.locals.user._id //How we add the userId to the post document
+    let drink = await Drink.create(newDrink)
+    res.json(drink)
 })
 
-router.get('/my-posts', authorize, async (req, res) => {
+router.get('/my-drinks', authorize, async (req, res) => {
 
-    let myPosts = await Post.find({ userId: res.locals.user._id }).populate('userId')
+    let myDrinks = await Drink.find({ userId: res.locals.user._id }).populate('userId')
 
-    res.json(myPosts)
+    res.json(myDrinks)
 
 })
 
@@ -35,10 +36,10 @@ router.get('/get-user', authorize, async (req, res) => {
     let user = await User.findById(res.locals.user._id)
     res.json(user)
 })
-router.post('/like-post', authorize, async (req, res) => {
+router.post('/like-drink', authorize, async (req, res) => {
     console.log('did i  hit this!?', req.body)
-    let updatedPost = await Post.findByIdAndUpdate(req.body.postId, { $inc: { likes: 1 } }, { new: true }).populate('userId')
-    res.json(updatedPost)
+    let updatedDrink = await Drink.findByIdAndUpdate(req.body.drinkId, { $inc: { likes: 1 } }, { new: true }).populate('userId')
+    res.json(updatedDrink)
 })
 
 router.post('/authenticate', async (req, res) => {

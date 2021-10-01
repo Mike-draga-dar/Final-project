@@ -41,7 +41,7 @@ function Header(props) {
                         <Link to="/profile">Profile</Link>
                     </> :
                     null}
-                
+
                 <Link to="/random-drinks">Random Drinks</Link>
             </nav>
 
@@ -49,7 +49,7 @@ function Header(props) {
                 <img src={headerImg} /><br></br>
                 <br></br>
                 <div className="tagline">
-                The perfect place for you to <strong>create</strong>, <strong>find</strong> and <strong>share</strong> your favorite drink recipes.
+                    The perfect place for you to <strong>create</strong>, <strong>find</strong> and <strong>share</strong> your favorite drink recipes.
                 </div>
             </div>
             <br></br><br></br>

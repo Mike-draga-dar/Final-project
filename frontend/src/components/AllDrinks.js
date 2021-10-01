@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import actions from '../api'
 
 function AllDrinks(props) {
-    const [posts, setPosts] = useState([])
+    const [drinks, setDrinks] = useState([])
 
     useEffect(async () => {
         let res = await actions.getAllDrinks()
-        setPosts(res.data.reverse())
+        setDrinks(res.data.reverse())
     }, [])
 
 
@@ -14,28 +14,28 @@ function AllDrinks(props) {
         console.log('click', whichPostId)
         let res = await actions.likePost(whichPostId)
         console.log(res.data)
-        let newPosts = [...posts]
-        newPosts[i] = res.data
-        setPosts(newPosts)
+        let newDrinks = [...drinks]
+        newDrinks[i] = res.data
+        setDrinks(newDrinks)
     }
     const ShowPosts = () => {
-        return posts.map((eachPost,i) => {
+        return drinks.map((eachDrink, i) => {
             return (
-                <div key={eachPost._id}>
-                    <img src={eachPost.userId.imageUrl}></img>
-                    <h2> {eachPost.userId.name}</h2>
-                    <h3>{eachPost.title}</h3>
-                    <p>{eachPost.post}</p>
-                    <p>{eachPost.instructions}</p>
-                    <img src={eachPost.image}></img>
-                    <h3>Likes: {eachPost.likes}</h3>
-                    <button onClick={(e) => handleClick(eachPost._id,i)} >Like 👍</button>
+                <div key={eachDrink._id}>
+                    <img src={eachDrink.userId.imageUrl}></img>
+                    <h2> {eachDrink.userId.name}</h2>
+                    <h3>{eachDrink.name}</h3>
+                    <p>{eachDrink.drink}</p>
+                    <p>{eachDrink.instructions}</p>
+                    <img src={eachDrink.image}></img>
+                    <h3>Likes: {eachDrink.likes}</h3>
+                    <button onClick={(e) => handleClick(eachDrink._id, i)} >Like 👍</button>
                     <hr></hr>
                 </div>
             )
         })
     }
-        console.log(posts)
+    console.log(drinks)
     return (
         <div className="container">
             <div className="red-header"><p>All Drinks</p></div><br></br>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react"
 import axios from 'axios';
 import actions from '../api';
+import { Link } from 'react-router-dom'
 
 
 
@@ -18,24 +19,27 @@ function Home() {
     console.log(drinks)
 
     const ShowDrinks = () => {
-        return drinks.map(eachDrink => {
-            return (
-                <div >
-                    {eachDrink.strDrink}
-                    <br />
-                    {eachDrink.strGlass}
-                    <hr />
+        return (
 
-
-                </div>
-            )
-        })
+            < ul >
+                {
+                    drinks.map((drink) => {
+                        return <Link key={drink._id} to={`/drinks/${drink._id}`}>
+                            <li>
+                                {drink.strDrink}
+                                <img src={drink.strDrinkThumb} alt="random Drinks" width="250px" />
+                            </li>
+                        </Link>
+                    })
+                }
+            </ul >
+        )
     }
 
 
     return (
         <div className="container">
-            Home
+            <ShowDrinks />
         </div>
     );
 }

@@ -33,7 +33,7 @@ const actions = {
         return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     },
     getDrinks: async () => {
-        return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s')
+        return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
     }
 }
 

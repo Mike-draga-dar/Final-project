@@ -21,8 +21,9 @@ function Header(props) {
             <div id="auth">
                 {user?.name ?
                     <div>
+                        <img src={user?.imageUrl} className="auth-profile-picture" />
                         <h4>{user?.name}</h4>
-                        <button onClick={logOut}>Log Out</button>
+                        <button onClick={logOut} className="auth-button">Log Out</button>
                     </div>
                     : <Auth getUser={getUser} />
                 }

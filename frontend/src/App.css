@@ -21,7 +21,38 @@ a:hover {
 #auth {
   position: absolute;
   top: 20px;
-  right: 25px;
+  right: 0px;
+  width: 100px;
+  text-align: center;
+}
+
+#auth h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+}
+
+.auth-profile-picture {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.auth-button {
+  background-color: #fb5e2f;
+  border: 2px solid #fb5e2f;
+  color: #fff;
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.5em;
+  letter-spacing: 1px;
+}
+
+.auth-button:hover {
+  background-color: #ff470f;
+  border: 2px solid #ff470f;
 }
 
 /* Header */
@@ -140,9 +171,17 @@ nav a:hover {
 /* Input & Forms */
 
 input {
-  border: 3px solid #6dafb8;
+  border: 3px solid #b9b9b9;
   font-size: 1em;
   padding: 20px;
+}
+
+input:hover {
+  border: 3px solid #8d8d8d;
+}
+
+.input-width {
+  width: 50%;
 }
 
 .new-drink-title {
@@ -164,22 +203,35 @@ input.image-button {
 }
 
 .upload-image {
-  background-color: #fff;
+  background-color: #e5e5e5;
+  background-image: url("../src/dropimage.png");
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 300px;
-  border: 1px dashed #ccc;
   position: relative;
   z-index: 100;
   pointer-events: none;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  border: 3px solid #6dafb8;
+  border: 3px solid #b9b9b9;
 }
 
 .submit-button {
   position: relative;
   top: 50px;
+  background-color: #fb5e2f;
+  border: 0;
+  padding: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+.submit-button:hover {
+  background-color: #ff470f;
 }
 
 /* Footer */

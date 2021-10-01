@@ -154,6 +154,34 @@ input {
   letter-spacing: 2px;
 }
 
+input.image-button {
+  width: 100%;
+  height: 300px;
+  color: #fff;
+  position: absolute;
+  object-fit: contain;
+  border: 0;
+}
+
+.upload-image {
+  background-color: #fff;
+  width: 100%;
+  height: 300px;
+  border: 1px dashed #ccc;
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border: 3px solid #6dafb8;
+}
+
+.submit-button {
+  position: relative;
+  top: 50px;
+}
+
 /* Footer */
 
 footer {

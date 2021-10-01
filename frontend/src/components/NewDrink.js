@@ -54,12 +54,11 @@ function NewPost(props) {
                 <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" /><br></br>
                 <br></br>
                 <div className="new-drink-title">Drink Image</div><br></br>
-                <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} /><br></br>
-                <br></br>
-                <div style={{height: "150px", width: "150px", border: "2px dashed black"}}>
-                    <img ref={uploadedImage} style={{width: "150px", height: "150px", position: "absolute" }} />
+                <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} className="image-button" />
+                <div className="upload-image">
+                    <img ref={uploadedImage} />
                 </div>
-                <button>Submit</button>
+                <button className="submit-button">Submit</button>
             </form>
         </div>
     );

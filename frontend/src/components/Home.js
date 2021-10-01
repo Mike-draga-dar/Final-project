@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import axios from 'axios';
 import actions from '../api';
 import { Link } from 'react-router-dom'
+import CocktailDetails from "./CocktailDetails"
 
 
 
@@ -12,8 +13,9 @@ function Home() {
 
 
     useEffect(async () => {
-        let res = await actions.getDrinks()
-        setDrinks(res.data.drinks)
+        let res = await actions.getAllDrinks()
+        console.log(res.data)
+        setDrinks(res.data)
     }, [])
 
     console.log(drinks)
@@ -26,8 +28,11 @@ function Home() {
                     drinks.map((drink) => {
                         return <Link key={drink._id} to={`/drinks/${drink._id}`}>
                             <li>
-                                {drink.strDrink}
-                                <img src={drink.strDrinkThumb} alt="random Drinks" width="250px" />
+                                {drink.name}
+                                <img src={drink.image} alt="image" width="200px" />
+
+
+                                <hr />
                             </li>
                         </Link>
                     })

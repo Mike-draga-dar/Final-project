@@ -24,10 +24,10 @@ const actions = {
         return await axios.get(`${SERVER_URL}/get-user`, createHeader())
     },
     getMyPosts: async () => {
-        return await axios.get(`${SERVER_URL}/my-posts`, createHeader())
+        return await axios.get(`${SERVER_URL}/my-drinks`, createHeader())
     },
     likePost: async (drinkId) => {
-        return await axios.post(`${SERVER_URL}/like-post`, { drinkId }, createHeader())
+        return await axios.post(`${SERVER_URL}/like-drink`, { drinkId }, createHeader())
     },
     getRandomDrinks: async () => {
         return await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')

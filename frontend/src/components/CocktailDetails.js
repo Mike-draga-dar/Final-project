@@ -24,6 +24,7 @@ function CocktailDetails(props) {
                 <ul>
                     <h3>Ingredients</h3> {details?.ingredients?.map(each => <li>{each}</li>)}
                     <h2>Instructions</h2> {details.instructions}
+
                     <img src={details.image} alt="imageOfCocktail" width="200px"></img>
                 </ul>
             </div>

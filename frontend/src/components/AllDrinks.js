@@ -28,7 +28,7 @@ function AllDrinks(props) {
                     <p>{eachDrink.drink}</p>
                     <p>{eachDrink.instructions}</p>
                     <img src={eachDrink.image}></img>
-                    <h3>Likes: {eachDrink.likes}</h3>
+                    <h3> Likes: {eachDrink.likes}</h3>
                     <button onClick={(e) => handleClick(eachDrink._id, i)} >Like 👍</button>
                     <hr></hr>
                 </div>

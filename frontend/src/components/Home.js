@@ -8,7 +8,7 @@ import CocktailDetails from "./CocktailDetails"
 
 function Home() {
 
-    const [drinks, setDrinks] = useState([])
+    const [drinks, setDrinks] = useState([]);
 
 
     useEffect(async () => {
@@ -17,7 +17,10 @@ function Home() {
         setDrinks(res.data)
     }, [])
 
-    // console.log(drinks)
+
+
+
+
 
     const ShowDrinks = () => {
         return (

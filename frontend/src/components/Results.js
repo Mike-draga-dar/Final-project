@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom'
+import actions from '../api';
 
 function Results(props) {
 
@@ -11,18 +13,40 @@ function Results(props) {
     useEffect(() => {
         const params = new URLSearchParams(props.location.search);
         const keyword = params.get("keyword");
-        axios
-          .get(
-            `../../backend/cocktails.json?keyword=${keyword}`
-          )
+        // axios
+        //   .get(
+        //     `../../backend/cocktails.json?keyword=${keyword}`
+        //   )
+        actions.searchDrink(keyword)
+        
           .then((resApi) => {
-            setDrinks(resApi?.data?._embedded?.events);
+            setDrinks(resApi.data);
           });
       }, [props.location.search]);
+
+      const ShowResults = () => {
+        return (
+          <ul>
+                {drinks.map((drink) => {
+                    return <Link key={drink._id} to={`/drinks/${drink._id}`}>
+                        <li >
+                            {drink.name}
+                            <img src={drink.image} alt="image" width="200px" />
+
+                            <hr />
+                        </li>
+                    </Link>
+                })
+                }
+          </ul>
+        )
+      }
 
     return (
         <div className="container">
             <div className="red-header"><p>Drink Results</p></div>
+            <br></br>
+            <ShowResults />
         </div>
     );
 }

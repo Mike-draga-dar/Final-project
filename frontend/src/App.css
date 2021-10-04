@@ -62,9 +62,6 @@ header {
   text-align: center;
 }
 
-.header {
-}
-
 .header img {
   width: 100%;
   max-width: 1000px;
@@ -72,6 +69,8 @@ header {
 
 .tagline {
   background-color: #6dafb8;
+  background-image: url("../src/headerimage.png");
+  background-position: center;
   padding: 70px;
   font-size: 2em;
   text-align: center;
@@ -233,6 +232,18 @@ input.image-button {
 
 .submit-button:hover {
   background-color: #ff470f;
+}
+
+/* Search */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /* Footer */

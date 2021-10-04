@@ -13,7 +13,7 @@ router.get('/all-drinks', async (req, res) => {
 
 //http://localhost:5000/api/new-drink POST
 router.post('/new-drink', authorize, async (req, res) => {
-    //Everyime you put authorize as middleware you'll have the user as res.locals.user
+    //Every time you put authorize as middleware you'll have the user as res.locals.user
     let newDrink = req.body
     newDrink.userId = res.locals.user._id //How we add the userId to the post document
     let drink = await Drink.create(newDrink)
@@ -53,7 +53,11 @@ router.post('/authenticate', async (req, res) => {
     jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
         res.json({ user, token })
     })
+
+
 })
+
+
 
 
 //Middleware >>> Put this in the middle of any route where you want to authorize

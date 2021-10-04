@@ -17,10 +17,7 @@ function Home() {
         setDrinks(res.data)
     }, [])
 
-
-
-
-
+    console.log(drinks)
 
     const ShowDrinks = () => {
         return (

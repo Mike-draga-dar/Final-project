@@ -7,33 +7,63 @@ import actions from '../api'
 
 function Profile(props) {
     const [posts, setPosts] = useState([])
+    const [liked, setliked] = useState([])
+
+
     useEffect(async () => {
         let res = await actions.getMyPosts()
         setPosts(res.data.reverse())
     }, [])
+     
+        useEffect(async () => {
+            let res = await actions.likePost()
+            setliked(res.data)
+        }, [])
+
+
+
 
 
     const ShowPosts = () => {
-        return posts.map(eachPost => {
+        return posts.map(eachDrink => {
             return (
-                <div key={eachPost._id}>
-                    <div >
-                        {eachPost.title}
-                    </div>
-                    <div>
-                        {eachPost.post}
-                    </div>
-                    <div>
-                        {eachPost.instructions}
-                    </div>
-                    <div>
-                    {!eachPost.image? null :(
-                       <img src={eachPost.image} alt= "DrinkImage" width="20%" height="20%"></img>
-                    )}
-                    </div>
+                <div key={eachDrink._id}>
+            
+                <h3>{eachDrink.name}</h3>
 
+                <p>Ingredients:</p>
+                <p>{eachDrink.ingredients?.map(eachIngredient=>{
+                    
+                    return(<li>{eachIngredient}</li>)
+                })}</p>
+               
+                <p>Instructions: {eachDrink.instructions}</p>
+
+                <img src={eachDrink.image}></img>
                 </div>
             )
+
+        })
+    }
+
+  const LikedPosts = () => {
+        return liked.map(eachDrink => {
+            return (
+                <div key={eachDrink._id}>
+            
+                <h3>{eachDrink.name}</h3>
+
+                <p>{eachDrink.ingredients?.map(eachIngredient=>{
+                    console.log(eachIngredient)
+                    return(<li>{eachIngredient}</li>)
+                })}</p>
+
+                <p>{eachDrink.instructions}</p>
+                
+                <img src={eachDrink.image}></img>
+                </div>
+            )
+
         })
     }
 
@@ -47,8 +77,13 @@ function Profile(props) {
                 <h1>{props.user?.name}</h1>
                 <div className="drink-title">Drinks</div>
                 <div className="MyPosts">
+                <h1>My Posts </h1>
                     <ShowPosts />
                 </div>
+                <div className="LikedPosts">
+                    {/* <LikedPosts/> */}
+                    <h1>Liked Posts</h1>
+                    </div>
             </div>
         </div>
     );

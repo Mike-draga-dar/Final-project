@@ -6,14 +6,14 @@ import actions from '../api';
 
 function NewPost(props) {
 
-    let [title, setTitle] = useState('')
+    let [name, setName] = useState('')
     let [instructions, setInstructions] = useState('')
-    let [post, setPost] = useState('')
+    let [ingredients, setIngredients] = useState('')
     let [image, setImage] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault()
-        let res = await actions.createNewPost({ title, post, instructions, image })
+        let res = await actions.createNewPost({ name, ingredients, instructions, image  })
         props.history.push('/all-drinks')
     }
 
@@ -44,16 +44,16 @@ function NewPost(props) {
             <div className="red-header"><p>New Drink</p></div>
             <br></br>
             <form onSubmit={handleSubmit}>
-                <div className="new-drink-title">Drink Name</div><br></br>
-                <input onChange={e => setTitle(e.target.value)} type="text" placeholder="Drink Name" className="input-width"/><br></br>
+                <div className="new-drink-name">Drink Name</div><br></br>
+                <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width"/><br></br>
                 <br></br>
-                <div className="new-drink-title">Drink Ingredients</div><br></br>
-                <input onChange={e => setPost(e.target.value)} type="text" placeholder="Ingredients" className="input-width" /><br></br>
+                <div className="new-drink-name">Drink Ingredients</div><br></br>
+                <input onChange={e => setIngredients(e.target.value)} type="text" placeholder="Ingredients" className="input-width" /><br></br>
                 <br></br>
-                <div className="new-drink-title">Drink Instructions</div><br></br>
+                <div className="new-drink-name">Drink Instructions</div><br></br>
                 <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" className="input-width" /><br></br>
                 <br></br>
-                <div className="new-drink-title">Drink Image</div><br></br>
+                <div className="new-drink-name">Drink Image</div><br></br>
                 <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} className="image-button" />
                 <div className="upload-image">
                     <img ref={uploadedImage} />

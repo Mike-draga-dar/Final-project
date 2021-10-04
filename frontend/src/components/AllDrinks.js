@@ -18,6 +18,7 @@ function AllDrinks(props) {
         newDrinks[i] = res.data
         setDrinks(newDrinks)
     }
+    console.log(drinks)
     const ShowPosts = () => {
         return drinks.map((eachDrink, i) => {
             return (

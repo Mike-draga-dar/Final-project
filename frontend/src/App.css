@@ -3,6 +3,7 @@
 body {
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
   overflow-x: hidden;
 }
 
@@ -114,6 +115,13 @@ nav a:hover {
   font-weight: 500;
 }
 
+/* Search */
+
+.search-container {
+  border: 3px solid #b9b9b9;
+  padding: 25px;
+}
+
 /* Content */
 
 .container {
@@ -138,6 +146,49 @@ nav a:hover {
   font-size: 1.5em;
   text-transform: uppercase;
   padding-right: 25px;
+}
+
+/* Single Drink Page */
+
+.drink {
+  display: flex;
+}
+
+.drink h1 {
+  margin: 0 0 50px 0;
+  font-size: 2em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #6dafb8;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.drink h2 {
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #fb5e2f;
+  padding: 10px;
+}
+
+.drink-photo {
+  display: flex;
+  width: 350px;
+  height: 350px;
+  padding-right: 20px;
+}
+
+.drink-info {
+  width: 100%;
+}
+
+.single-drink-img {
+  width: 350px;
+  height: 350px;
 }
 
 /* Profile Page */
@@ -232,18 +283,6 @@ input.image-button {
 
 .submit-button:hover {
   background-color: #ff470f;
-}
-
-/* Search */
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }
 
 /* Footer */

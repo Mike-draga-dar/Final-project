@@ -22,7 +22,7 @@ function CocktailDetails(props) {
             <div>
                 <h1>{details.name}</h1>
                 <ul>
-                    <h3>Ingrediantes</h3> {details?.ingredients?.map(each => <li>{each}</li>)}
+                    <h3>Ingredients</h3> {details?.ingredients?.map(each => <li>{each}</li>)}
                     <h2>Instructions</h2> {details.instructions}
                     <img src={details.image} alt="imageOfCocktail" width="200px"></img>
                 </ul>

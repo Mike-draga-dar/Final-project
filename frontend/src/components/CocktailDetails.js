@@ -20,21 +20,33 @@ function CocktailDetails(props) {
     const ShowDetails = () => {
         return (
             <div>
-                <h1>{details.name}</h1>
-                <ul>
-                    <h3>Ingredients</h3> {details?.ingredients?.map(each => <li>{each}</li>)}
-                    <h2>Instructions</h2> {details.instructions}
+                <div className="red-header">
+                    <p>All Drinks</p>
+                </div>
+                <br></br>
+                <br></br>
+                <div className="drink">
+                    <div className="drink-photo">
+                        <img src={details.image} alt="Cocktail Image" className="single-drink-img"></img>
+                    </div>
+                    <div className="drink-info">
+                        <h1>{details.name}</h1>
 
-                    <img src={details.image} alt="imageOfCocktail" width="200px"></img>
-                </ul>
+                        <h2>Ingredients</h2>
+                        {details?.ingredients?.map(each => <li>{each}</li>)}<br></br>
+
+                        <h2>Instructions</h2>
+                        {details.instructions}
+                    </div>
+                </div>
+
+
             </div>
         )
     }
 
     return (
-        <div>
-
-            {/* <h1> Details Here {props.match.params.drinkId}</h1> */}
+        <div className="container">
             <ShowDetails />
         </div>
     );

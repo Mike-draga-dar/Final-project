@@ -11,9 +11,13 @@ function Home() {
     const [drinks, setDrinks] = useState([]);
 
 
+
+
     useEffect(async () => {
+
         let res = await actions.getAllDrinks()
         // console.log(res.data)
+
         setDrinks(res.data)
     }, [])
 
@@ -26,8 +30,8 @@ function Home() {
                 {drinks.map((drink) => {
                     return <Link key={drink._id} to={`/drinks/${drink._id}`}>
                         <li >
-                            {drink.name}
                             <img src={drink.image} alt="image" width="200px" />
+                            {drink.name}
 
                             <hr />
                         </li>
@@ -42,6 +46,7 @@ function Home() {
     return (
         <div className="container">
             <ShowDrinks />
+
         </div>
     );
 }

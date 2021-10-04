@@ -1,4 +1,4 @@
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import TheContext from '../TheContext';
 import Auth from './Auth'
@@ -12,6 +12,16 @@ function Header(props) {
     }
 
     let { user, setUser, getUser } = useContext(TheContext)
+
+    // Search Bar
+    const history = useHistory();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let eventKeyWord = e.target[0].value;
+        history.push(
+          `/results?keyword=${eventKeyWord}`
+        );
+      };
 
     return (
         <div className="container">
@@ -49,6 +59,15 @@ function Header(props) {
                     The perfect place for you to <strong>create</strong>, <strong>find</strong> and <strong>share</strong> your favorite drink recipes.
                 </div>
             </div>
+
+            <br></br><br></br>
+
+            <div className="search-container">
+                <form onSubmit={handleSubmit}>
+                    <input type="text" placeholder="Search for drinks"></input>
+                </form>
+            </div>
+
             <br></br><br></br>
         </div>
     );

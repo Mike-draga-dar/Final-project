@@ -7,6 +7,7 @@ import NewPost from './components/NewDrink'
 import RandomDrinks from './components/RandomDrinks';
 import Profile from './components/Profile'
 import Header from './components/Header'
+import Results from './components/Results'
 import Footer from './components/Footer'
 import TheContext from './TheContext';
 import actions from './api';
@@ -36,6 +37,7 @@ function App() {
         <Route exact path="/profile" render={(props) => <Profile user={user} {...props} />} />
         <Route exact path="/random-drinks" render={(props) => <RandomDrinks user={user} {...props} />} />
         <Route exact path="/drinks/:drinkId" render={(props) => <CocktailDetails user={user} {...props} />} />
+        <Route exact path="/results" render={(props) => <Results user={user} {...props} />} />
       </Switch>
       <Footer />
 

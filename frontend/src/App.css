@@ -86,7 +86,7 @@ header {
 
 .logo img:hover {
   -webkit-transform: rotate(360deg);
-  transform: rotate(3g60deg);
+  transform: rotate(360deg);
 }
 
 /* Nav Bar */

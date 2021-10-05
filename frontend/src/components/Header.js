@@ -51,7 +51,7 @@ function Header(props) {
                     </> :
                     null}
 
-                <Link to="/random-drinks">Random Drinks</Link>
+                <Link to="/random-drinks">Random Drink</Link>
             </nav>
 
             <div className="header">

@@ -29,7 +29,7 @@ function Footer(props) {
                         </> :
                         null}
 
-                    <Link to="/random-drinks">Random Drinks</Link>
+                    <Link to="/random-drinks">Random Drink</Link>
                 </nav>
 
                 <p>Created by <Link to="https://github.com/darioformoso" target="_blank">Dario</Link>, <Link to="https://github.com/DraganCicic" target="_blank">Dragan</Link> & <Link to="https://github.com/michaelporreca" target="_blank">Michael</Link></p>

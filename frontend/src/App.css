@@ -328,3 +328,7 @@ footer {
   background-color: #dfdfdf;
   text-align: center;
 }
+
+footer nav a {
+  border-right: 2px solid #dfdfdf;
+}

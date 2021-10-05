@@ -9,7 +9,7 @@ function RandomImages() {
 
     useEffect(async () => {
 
-        let res = await actions.getAllDrinks()
+        let res = await actions.getAllDrinks({skip:0, limit:450})
         setImages(res.data)
 
     }, [])

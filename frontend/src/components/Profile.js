@@ -8,6 +8,7 @@ import actions from '../api'
 function Profile(props) {
     const [posts, setPosts] = useState([])
     const [liked, setliked] = useState([])
+    
 
 
     useEffect(async () => {

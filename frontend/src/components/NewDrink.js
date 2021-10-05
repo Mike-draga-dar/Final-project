@@ -8,14 +8,39 @@ function NewPost(props) {
 
     let [name, setName] = useState('')
     let [instructions, setInstructions] = useState('')
-    let [ingredients, setIngredients] = useState('')
+    let [ingredients, setIngredients] = useState([])
     let [image, setImage] = useState('')
+    let[numIngredients, setNumIngredients]= useState(0)
+
+    
 
     const handleSubmit = async e => {
         e.preventDefault()
         let res = await actions.createNewPost({ name, ingredients, instructions, image  })
         props.history.push('/all-drinks')
     }
+
+    
+    
+
+
+
+    // const handleAddClick= (e) =>{
+    //   setInputList([...inputList ,{ ingredient:"" }]);
+
+      
+
+    // }
+    // const handleRemoveClick=index =>{
+    //     const list =[...inputList];
+    //     list.splice(index,1);
+    //     setInputList(list);
+
+    // }
+
+  
+    
+    
 
     // Image Upload
     const uploadedImage = React.useRef(null);
@@ -34,6 +59,7 @@ function NewPost(props) {
         formData.append("file", file)
         formData.append("upload_preset", "rjpjmc9k")
         let res = await axios.post('https://iron-cors-anywhere.herokuapp.com/https://api.cloudinary.com/v1_1/tresamigos/upload', formData);
+        console.log(res.data)
         setImage(res.data.secure_url)
       }
     };
@@ -44,15 +70,50 @@ function NewPost(props) {
             <div className="red-header"><p>New Drink</p></div>
             <br></br>
             <form onSubmit={handleSubmit}>
+
+                {/*Drink Name  */}
                 <div className="new-drink-name">Drink Name</div><br></br>
                 <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width"/><br></br>
                 <br></br>
-                <div className="new-drink-name">Drink Ingredients</div><br></br>
-                <input onChange={e => setIngredients(e.target.value)} type="text" placeholder="Ingredients" className="input-width" /><br></br>
+
+                Drink Ingredients
                 <br></br>
+                <input onChange={e=> setIngredients(e.target.value.trim().split(" "))} placeholder="Ingredients separated by space" className="input-width"/>
+                
+                {/* {numIngredients}
+                <button type="button"
+                 onClick={()=>setNumIngredients(numIngredients+1)}>Add Ingredient</button> */}
+                {/* <div className="new-drink-name">Drink Ingredients</div><br></br>
+                {inputList.map((x,i)=>{
+                    return (
+                        
+
+                <input onChange={e => setIngredients(e.target.value)} type="text" placeholder="Ingredients" className="input-width" />
+                          
+                {inputList.length !== 1 && <button type="button"
+                
+                onClick={() => handleRemoveClick(i)}>Remove</button>}
+              {inputList.length - 1 === i && <button type= "button"onClick={handleAddClick}>Add</button>}
+               
+            
+                    )
+                })} */}
+
+
+
+                <br></br>
+
+               
+        
+               
+                <br></br>
+
+                {/* Drink Instructions */}
                 <div className="new-drink-name">Drink Instructions</div><br></br>
                 <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" className="input-width" /><br></br>
                 <br></br>
+
+                {/* Drink Image */}
                 <div className="new-drink-name">Drink Image</div><br></br>
                 <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} className="image-button" />
                 <div className="upload-image">

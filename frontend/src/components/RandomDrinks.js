@@ -13,7 +13,7 @@ function RandomImages() {
         setImages(res.data)
 
     }, [])
-let random=Math.floor(Math.random()*408)
+let random=Math.floor(Math.random()*images.length)
         console.log(random)
 
     return (

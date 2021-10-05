@@ -21,7 +21,7 @@ a:hover {
 /* Google Login Auth */
 
 #auth {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 0px;
   width: 100px;
@@ -360,6 +360,47 @@ footer nav a {
 /* Mobile CSS */
 
 @media only screen and (max-width: 600px) {
+  /* Google Login Auth */
+
+  #auth {
+    position: static;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    padding-top: 50px;
+  }
+
+  #auth h4 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+  }
+
+  .auth-profile-picture {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .auth-button {
+    background-color: #fb5e2f;
+    border: 2px solid #fb5e2f;
+    color: #fff;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.5em;
+    letter-spacing: 1px;
+  }
+
+  .auth-button:hover {
+    background-color: #ff470f;
+    border: 2px solid #ff470f;
+  }
+
   /* Nav Bar */
 
   nav {

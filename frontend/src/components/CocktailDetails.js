@@ -14,8 +14,12 @@ function CocktailDetails(props) {
         let res = await actions.getOneCocktail(props.match.params.drinkId)
         console.log(res.data)
         setDetails(res.data)
-    }, [])  
+    }, [])
 
+
+    const handleClick = () => {
+        // let res = await actions.likePost()
+    }
 
     const ShowDetails = () => {
         return (
@@ -28,6 +32,8 @@ function CocktailDetails(props) {
                 <div className="drink">
                     <div className="drink-photo">
                         <img src={details.image} alt="Cocktail Image" className="single-drink-img"></img>
+
+
                     </div>
                     <div className="drink-info">
                         <h1>{details.name}</h1>
@@ -39,6 +45,9 @@ function CocktailDetails(props) {
 
                         <h2>Instructions</h2>
                         {details.instructions}
+
+                        <h4>Likes : { }</h4>
+                        <button onClick={(e) => handleClick()}>Like 👍</button>
                     </div>
                 </div>
 

@@ -45,8 +45,11 @@ function Home() {
 
     return (
         <div className="container">
+            <div className="red-header">
+                <p>All Drinks</p>
+            </div>
+            <br></br><br></br>
             <ShowDrinks />
-
         </div>
     );
 }

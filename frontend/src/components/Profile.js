@@ -39,7 +39,7 @@ function Profile(props) {
 
                     <p>Instructions: {eachDrink.instructions}</p>
 
-                    <img src={eachDrink.image}></img>
+                    <img src={eachDrink.image} alt="drinks-picture"></img>
                 </div>
             )
 
@@ -60,7 +60,7 @@ function Profile(props) {
 
                     <p>{eachDrink.instructions}</p>
 
-                    <img src={eachDrink.image}></img>
+                    <img src={eachDrink.image} alt="drinks-picture"></img>
                 </div>
             )
 

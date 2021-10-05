@@ -1,49 +1,56 @@
-import { useEffect, useState } from 'react';
-import actions from '../api'
+import { useEffect, useState } from "react"
+import axios from 'axios';
+import actions from '../api';
+import { Link } from 'react-router-dom'
+import CocktailDetails from "./CocktailDetails"
 
-function AllDrinks(props) {
-    const [drinks, setDrinks] = useState([])
+
+
+function Home() {
+
+    const [drinks, setDrinks] = useState([]);
+    let [limit, setLimit] = useState(10);
+    let [skip, setSkip] = useState(0)
+
+
 
     useEffect(async () => {
-        let res = await actions.getAllDrinks({skip: 0, limit: 1000})
-        setDrinks(res.data.reverse())
-    }, [])
 
-
-    const handleClick = async (whichPostId, i) => {
-        console.log('click', whichPostId)
-        let res = await actions.likePost(whichPostId)
+        let res = await actions.getAllDrinks({ limit, skip })
         console.log(res.data)
-        let newDrinks = [...drinks]
-        newDrinks[i] = res.data
-        setDrinks(newDrinks)
+
+        setDrinks(res.data)
+    }, [skip])
+
+
+
+    const ShowDrinks = () => {
+        return (
+            <div className="all-drinks">
+                {drinks.map((drink) => {
+                    return <Link key={drink._id} to={`/drinks/${drink._id}`}>
+                        <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
+                        {drink.name}<br></br>
+                        <br></br>
+                    </Link>
+                })
+                }
+            </div>
+        )
     }
-    console.log(drinks)
-    const ShowPosts = () => {
-        return drinks.map((eachDrink, i) => {
-            return (
-                <div key={eachDrink._id}>
-                    <img src={eachDrink.userId?.imageUrl}></img>
-                    <h2> {eachDrink.userId?.name}</h2>
-                    <h3>{eachDrink.name}</h3>
-                    <p>{eachDrink.drink}</p>
-                    <p>{eachDrink.instructions}</p>
-                    <img src={eachDrink.image}></img>
-                    <h3> Likes: {eachDrink.likes}</h3>
-                    <button onClick={(e) => handleClick(eachDrink._id, i)} >Like 👍</button>
-                    <hr></hr>
-                </div>
-            )
-        })
-    }
-    console.log(drinks)
+
+
     return (
         <div className="container">
-            <div className="red-header"><p>All Drinks</p></div><br></br>
-            <br></br>
-            <ShowPosts />
+            <div className="red-header">
+                <p>All Drinks</p>
+            </div>
+            <br></br><br></br>
+            <ShowDrinks />
+            <button onClick={() => setSkip(Math.max((skip - 10), 0))}>Previous</button>
+            <button onClick={() => setSkip(skip + 10)}>Next</button>
         </div>
     );
 }
 
-export default AllDrinks;
+export default Home;

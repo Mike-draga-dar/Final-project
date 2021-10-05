@@ -6,6 +6,7 @@ const drinkSchema = new Schema({
     instructions: String,
     image: String,
     ingredients: Array,
+    measurements: Array,
     // measure: Array,
     likes: { type: Number, default: 0 },
     userId: { type: Schema.Types.ObjectId, ref: 'User' }

@@ -57,7 +57,18 @@ router.post('/authenticate', async (req, res) => {
 
 })
 
-
+router.get('/results', async (req, res) => {
+    let {keyword} = req.query
+    let drinks = await Drink.find({
+        $or: [ 
+            {name: {$regex: keyword, $options: 'i'}},
+            {ingredients: {$regex: keyword, $options: 'i'}}
+        ]
+    })
+    // var result = db.collection('AdSchema').find({
+    //     $or: [ {vehicleDescription : { $regex: search.keyWord, $options: 'i' }}, { adDescription: { $regex: search.keyWord, $options: 'i' } } ]
+    return res.json(drinks)
+})
 
 
 //Middleware >>> Put this in the middle of any route where you want to authorize

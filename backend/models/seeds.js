@@ -8167,4 +8167,4 @@ const drinks = [
 
 
 
-Drink.insertMany(drinks)
+Drink.insertMany(drinks).then(response => console.log(`inserted ${response.length} drinks`))

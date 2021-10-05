@@ -173,6 +173,14 @@ nav a:hover {
   padding-right: 25px;
 }
 
+/* All Drinks */
+
+.all-drinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 /* Single Drink Page */
 
 .drink {

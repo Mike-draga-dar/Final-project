@@ -25,20 +25,16 @@ function Home() {
 
     const ShowDrinks = () => {
         return (
-
-            < ul >
-                {drinks.map((drink) => {
-                    return <Link key={drink._id} to={`/drinks/${drink._id}`}>
-                        <li >
-                            <img src={drink.image} alt="image" width="200px" />
-                            {drink.name}
-
-                            <hr />
-                        </li>
-                    </Link>
-                })
-                }
-            </ul >
+            <div className="all-drinks">
+                    {drinks.map((drink) => {
+                        return <Link key={drink._id} to={`/drinks/${drink._id}`}>
+                                <img src={drink.image} alt="image" width="200px" /><br></br>
+                                {drink.name}<br></br>
+                                <br></br>
+                        </Link>
+                    })
+                    }
+            </div>
         )
     }
 

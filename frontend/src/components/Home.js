@@ -28,7 +28,7 @@ function Home() {
             <div className="all-drinks">
                     {drinks.map((drink) => {
                         return <Link key={drink._id} to={`/drinks/${drink._id}`}>
-                                <img src={drink.image} alt="image" width="200px" /><br></br>
+                                <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
                                 {drink.name}<br></br>
                                 <br></br>
                         </Link>

@@ -123,8 +123,6 @@ nav a:hover {
 /* Search */
 
 .search-container {
-  /* border: 3px solid #8d8d8d; */
-  /* padding: 25px; */
   text-align: right;
 }
 
@@ -139,6 +137,7 @@ nav a:hover {
 .search-input {
   width: 350px;
 }
+
 .search-button {
   font-size: 0.8em;
   font-weight: 400;
@@ -156,6 +155,7 @@ nav a:hover {
 }
 
 /* Red Header Box */
+
 .red-header {
   width: 350px;
   height: 80px;
@@ -180,6 +180,10 @@ nav a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
+}
+
+.all-drinks-img {
+  width: 200px;
 }
 
 /* Single Drink Page */
@@ -331,4 +335,112 @@ footer {
 
 footer nav a {
   border-right: 2px solid #dfdfdf;
+}
+
+/* Mobile CSS */
+
+@media only screen and (max-width: 600px) {
+  /* Nav Bar */
+
+  nav {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  nav a {
+    border-right: 0px;
+    margin: 0px auto;
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav a:not(:last-child) {
+    border-right: 0px; /* This will not give border to last li element */
+  }
+
+  nav a:hover {
+    font-weight: 500;
+    color: #fb5e2f;
+  }
+
+  /* Search */
+
+  .search-container {
+    text-align: center;
+  }
+
+  .search-input {
+    width: 50%;
+  }
+
+  /* Content */
+
+  .container {
+    margin: 0px auto;
+    width: 100%;
+  }
+
+  /* Red Header Box */
+
+  .red-header {
+    width: 96%;
+    height: 80px;
+    border: 3px solid #fb5e2f;
+    background-image: url("../src/star.png");
+    background-position: left;
+    background-size: 150px;
+    background-repeat: no-repeat;
+  }
+
+  .red-header p {
+    text-align: right;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding-right: 25px;
+  }
+
+  /* All Drinks */
+
+  .all-drinks {
+    margin: 0px auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .all-drinks-img {
+    width: 150px;
+  }
+
+  /* Single Drink Page */
+
+  .drink {
+    display: unset;
+  }
+
+  .drink-photo {
+    width: 100%;
+    padding-bottom: 25px;
+  }
+
+  .drink-info {
+    width: 100%;
+  }
+
+  .single-drink-img {
+    width: 100%;
+  }
+
+  /* Input & Forms */
+
+  input.image-button {
+    width: 95%;
+  }
+
+  .upload-image {
+    width: 95%;
+  }
 }

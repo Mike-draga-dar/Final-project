@@ -14,7 +14,7 @@ function CocktailDetails(props) {
         let res = await actions.getOneCocktail(props.match.params.drinkId)
         console.log(res.data)
         setDetails(res.data)
-    }, [])
+    }, [])  
 
 
     const ShowDetails = () => {

@@ -128,6 +128,25 @@ nav a:hover {
   text-align: right;
 }
 
+.search-container input {
+  font-size: 0.8em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.search-input {
+  width: 350px;
+}
+.search-button {
+  font-size: 0.8em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
 /* Content */
 
 .container {

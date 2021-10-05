@@ -34,7 +34,7 @@ function Profile(props) {
                     <p>Ingredients:</p>
                     <p>{eachDrink.ingredients?.map(eachIngredient => {
 
-                        return (<li>{eachIngredient}</li>)
+                        return (<li key={eachIngredient}>{eachIngredient}</li>)
                     })}</p>
 
                     <p>Instructions: {eachDrink.instructions}</p>

@@ -9,8 +9,8 @@ const createHeader = () => { //Sends my token to the backend
 
 //THIS IS WHERE WE CONNECT TO THE BACKEND >> OUR FRONT END ROUTES
 const actions = {
-    getAllDrinks: async () => {
-        return await axios.get(`${SERVER_URL}/all-drinks`, createHeader())
+    getAllDrinks: async ({ limit, skip }) => {
+        return await axios.get(`${SERVER_URL}/all-drinks?limit=${limit}&skip=${skip}`, createHeader())
     },
     createNewPost: async ({ title, post, instructions, image }) => {
         return await axios.post(`${SERVER_URL}/new-drink`, { title, post, instructions, image }, createHeader())

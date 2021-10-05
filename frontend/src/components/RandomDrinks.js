@@ -18,22 +18,29 @@ let random=Math.floor(Math.random()*images.length)
 
     return (
         <div className="container">
-        <img src={images?.[random]?.image}></img>
+            <div className="red-header">
+                <p>Random Drink</p>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="drink">
+                <div className="drink-photo">
+                    <img src={images?.[random]?.image} className="single-drink-img"></img>
+                </div>
+                <div className="drink-info">
+                    <h1>{images?.[random]?.name}</h1>
 
-           <p>{images?.[random]?.name}</p>
+                    <h2>Ingredients</h2>
+                    {images?.[random]?.ingredients.map(eachIngredient=>{
+                    return(
+                    <li>{eachIngredient}</li>
+                    )
+                    })}
 
-           <p>Ingredients:</p>
-           <ul>
-        {images?.[random]?.ingredients.map(eachIngredient=>{
-            return(
-                <li>{eachIngredient}</li>
-            )
-        })}
-
-           </ul>
-
-           <p>{images?.[random]?.instructions}</p>
-
+                    <h2>Instructions</h2>
+                    {images?.[random]?.instructions}
+                </div>
+            </div>
         </div>
     )
 }

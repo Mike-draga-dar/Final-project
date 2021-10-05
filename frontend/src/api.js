@@ -9,11 +9,12 @@ const createHeader = () => { //Sends my token to the backend
 
 //THIS IS WHERE WE CONNECT TO THE BACKEND >> OUR FRONT END ROUTES
 const actions = {
-    getAllDrinks: async () => {
-        return await axios.get(`${SERVER_URL}/all-drinks`, createHeader())
+    getAllDrinks: async ({ limit, skip }) => {
+        return await axios.get(`${SERVER_URL}/all-drinks?limit=${limit}&skip=${skip}`, createHeader())
     },
-    createNewPost: async ({ name, ingredients, instructions, image }) => {
-        return await axios.post(`${SERVER_URL}/new-drink`, { name, ingredients, instructions, image }, createHeader())
+    createNewPost: async ({ title, post, instructions, image }) => {
+        return await axios.post(`${SERVER_URL}/new-drink`, { title, post, instructions, image }, createHeader())
+
     },
     authenticate: async (user) => {
         let res = await axios.post(`${SERVER_URL}/authenticate`, user)
@@ -36,9 +37,6 @@ const actions = {
     },
     getOneCocktail: async (drinkId) => {
         return await axios.post(`${SERVER_URL}/getOneCocktail`, { drinkId }, createHeader())
-    },
-    searchDrink: async (keyword) => {
-        return await axios.get(`${SERVER_URL}/results?keyword=${keyword}`)
     }
 }
 

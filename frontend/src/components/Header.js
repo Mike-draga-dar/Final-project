@@ -19,9 +19,9 @@ function Header(props) {
         e.preventDefault();
         let eventKeyWord = e.target[0].value;
         history.push(
-          `/results?keyword=${eventKeyWord}`
+            `/results?keyword=${eventKeyWord}`
         );
-      };
+    };
 
     return (
         <div className="container">
@@ -64,7 +64,7 @@ function Header(props) {
 
             <div className="search-container">
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Search for drinks" className="search-input"></input> <input class="search-button" value="Search" type="submit"></input>
+                    <input type="text" placeholder="Search for drinks" className="search-input"></input> <input className="search-button" value="Search" type="submit"></input>
                 </form>
             </div>
 

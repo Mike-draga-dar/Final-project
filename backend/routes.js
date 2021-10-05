@@ -6,7 +6,9 @@ const jwt = require('jsonwebtoken')
 
 //http://localhost:5000/api/all-drinks GET
 router.get('/all-drinks', async (req, res) => {
-    let allDrinks = await Drink.find().populate('userId')
+    let { limit, skip } = req.query
+    console.log(req.query, limit)
+    let allDrinks = await Drink.find().populate('userId').limit(Number(limit)).skip(Number(skip))
     // console.log(allDrinks, "vnfkjvbdfk")
     res.json(allDrinks)
 })
@@ -58,11 +60,11 @@ router.post('/authenticate', async (req, res) => {
 })
 
 router.get('/results', async (req, res) => {
-    let {keyword} = req.query
+    let { keyword } = req.query
     let drinks = await Drink.find({
-        $or: [ 
-            {name: {$regex: keyword, $options: 'i'}},
-            {ingredients: {$regex: keyword, $options: 'i'}}
+        $or: [
+            { name: { $regex: keyword, $options: 'i' } },
+            { ingredients: { $regex: keyword, $options: 'i' } }
         ]
     })
     // var result = db.collection('AdSchema').find({

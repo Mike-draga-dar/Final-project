@@ -32,9 +32,16 @@ let random=Math.floor(Math.random()*images.length)
 
                     <h2>Ingredients</h2>
                     {images?.[random]?.ingredients.map(eachIngredient=>{
-                    return(
-                    <li>{eachIngredient}</li>
-                    )
+                        return(
+                            <li>{eachIngredient}</li>
+                        )
+                    })}
+
+                    <h2>Measurements</h2>
+                    {images?.[random]?.measurements.map(eachMeasurement=>{
+                        return (
+                            <li>{eachMeasurement}</li>
+                        )
                     })}
 
                     <h2>Instructions</h2>

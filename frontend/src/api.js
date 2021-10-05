@@ -37,6 +37,9 @@ const actions = {
     },
     getOneCocktail: async (drinkId) => {
         return await axios.post(`${SERVER_URL}/getOneCocktail`, { drinkId }, createHeader())
+    },
+    searchDrink: async (keyword) => {
+        return await axios.get(`${SERVER_URL}/results?keyword=${keyword}`)
     }
 }
 

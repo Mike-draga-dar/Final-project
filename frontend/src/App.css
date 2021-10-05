@@ -234,6 +234,7 @@ nav a:hover {
 
 .drink-info {
   width: 100%;
+  line-height: 1.8em;
 }
 
 .single-drink-img {
@@ -345,6 +346,13 @@ footer {
   text-align: center;
 }
 
+footer p {
+  font-size: 0.7em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
 footer nav a {
   border-right: 2px solid #dfdfdf;
 }

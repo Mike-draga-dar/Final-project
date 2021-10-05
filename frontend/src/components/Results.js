@@ -26,19 +26,18 @@ function Results(props) {
 
   const ShowResults = () => {
     return (
-      <ul>
+      <div className="all-drinks">
         {drinks.map((drink) => {
           return <Link key={drink._id} to={`/drinks/${drink._id}`}>
-            <li >
-              <img src={drink.image} alt="image" width="200px" />
-              {drink.name}
-
-              <hr />
-            </li>
-          </Link>
+          <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
+          <br></br>
+          {drink.name}<br></br>
+          <br></br>
+          <br></br>
+      </Link>
         })
         }
-      </ul>
+      </div>
     )
   }
 

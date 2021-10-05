@@ -12,8 +12,9 @@ const actions = {
     getAllDrinks: async () => {
         return await axios.get(`${SERVER_URL}/all-drinks`, createHeader())
     },
-    createNewPost: async ({ name, ingredients, instructions, image }) => {
-        return await axios.post(`${SERVER_URL}/new-drink`, { name, ingredients, instructions, image }, createHeader())
+    createNewPost: async ({ title, post, instructions, image }) => {
+        return await axios.post(`${SERVER_URL}/new-drink`, { title, post, instructions, image }, createHeader())
+
     },
     authenticate: async (user) => {
         let res = await axios.post(`${SERVER_URL}/authenticate`, user)
@@ -36,9 +37,6 @@ const actions = {
     },
     getOneCocktail: async (drinkId) => {
         return await axios.post(`${SERVER_URL}/getOneCocktail`, { drinkId }, createHeader())
-    },
-    searchDrink: async (keyword) => {
-        return await axios.get(`${SERVER_URL}/results?keyword=${keyword}`)
     }
 }
 

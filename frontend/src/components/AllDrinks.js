@@ -5,7 +5,7 @@ function AllDrinks(props) {
     const [drinks, setDrinks] = useState([])
 
     useEffect(async () => {
-        let res = await actions.getAllDrinks()
+        let res = await actions.getAllDrinks({skip: 0, limit: 1000})
         setDrinks(res.data.reverse())
     }, [])
 

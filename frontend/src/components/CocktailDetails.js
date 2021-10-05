@@ -33,9 +33,7 @@ function CocktailDetails(props) {
                         <h1>{details.name}</h1>
 
                         <h2>Ingredients</h2>
-                        {details?.ingredients?.map(each => <li>
-                            {each}
-                        </li>)}<br></br>
+                        {details?.ingredients?.map(each => <li>{each}</li>)}<br></br>
                         <h2>Measurements</h2>
                         {details?.measurements?.map(each => <li>{each}</li>)}<br></br>
 

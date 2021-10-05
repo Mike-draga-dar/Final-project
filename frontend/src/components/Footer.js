@@ -18,6 +18,20 @@ function Footer(props) {
         <footer>
             <div className="container">
                 <div className="logo"><img src={footerLogo}></img></div>
+
+                <nav>
+                    <Link to="/">Home</Link>
+                    <Link to="/all-drinks">All Drinks</Link>
+                    {user?.name ?
+                        <>
+                            <Link to="/new-drink">New Drink</Link>
+                            <Link to="/profile">Profile</Link>
+                        </> :
+                        null}
+
+                    <Link to="/random-drinks">Random Drinks</Link>
+                </nav>
+
                 <p>Created by <Link to="https://github.com/darioformoso" target="_blank">Dario</Link>, <Link to="https://github.com/DraganCicic" target="_blank">Dragan</Link> & <Link to="https://github.com/michaelporreca" target="_blank">Michael</Link></p>
             </div>
         </footer>

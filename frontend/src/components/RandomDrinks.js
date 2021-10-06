@@ -4,8 +4,9 @@ import axios from "axios";
 
 
 
-function RandomImages() {
+function RandomImages(props, i) {
     const [images, setImages] = useState({});
+
 
     useEffect(async () => {
 
@@ -14,6 +15,7 @@ function RandomImages() {
 
     }, [])
     let random = Math.floor(Math.random() * images.length)
+
 
 
     return (
@@ -46,6 +48,10 @@ function RandomImages() {
 
                     <h2>Instructions</h2>
                     {images?.[random]?.instructions}
+
+
+                    <h3> Likes:</h3>
+                    <button onClick >Like 👍</button>
                 </div>
             </div>
         </div>

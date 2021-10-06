@@ -76,16 +76,16 @@ function NewPost(props) {
                 {/*Drink Name  */}
                 <div className="new-drink-input-title">Drink Name</div><br></br>
                 <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width" /><br></br>
-                <br></br>
 
                 {/* {Drink Ingredients} */}
                 <br></br>
-                <input onChange={e => setIngredients(e.target.value.trim().split(","))} placeholder="Ingredients separated by comma" className="input-width" />
+                <div className="new-drink-input-title">Drink Ingredients</div><br></br>
+                <input onChange={e => setIngredients(e.target.value.trim().split(","))} placeholder="Ingredients separated by comma" className="input-width" /><br></br>
 
 
                 <br></br>
-
-                <input onChange={e => setMeasurements(e.target.value.trim().split(","))} placeholder="Measurements separated by comma" className="input-width" />
+                <div className="new-drink-input-title">Drink Measurements</div><br></br>
+                <input onChange={e => setMeasurements(e.target.value.trim().split(","))} placeholder="Measurements separated by comma" className="input-width" /><br></br>
 
 
                 <br></br>

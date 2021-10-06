@@ -24,6 +24,15 @@ function Home() {
 
 
 
+    const handleClick = async (whichPostId, i) => {
+        console.log('click', whichPostId)
+        let res = await actions.likePost(whichPostId)
+        console.log(res.data)
+        let newDrinks = [...drinks]
+        newDrinks[i] = res.data
+        setDrinks(newDrinks)
+    }
+
     const ShowDrinks = () => {
         return (
             <div className="all-drinks">
@@ -32,6 +41,7 @@ function Home() {
                         <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
                         <br></br>
                         {drink.name}<br></br>
+
                         <br></br>
                         <br></br>
                     </Link>

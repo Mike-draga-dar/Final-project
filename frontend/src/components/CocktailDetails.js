@@ -6,14 +6,14 @@ import actions from '../api';
 
 
 
-function CocktailDetails(props,i) {
+function CocktailDetails(props, i) {
 
     let [details, setDetails] = useState({})
     
 
     useEffect(async () => {
         let res = await actions.getOneCocktail(props.match.params.drinkId)
-        
+
         setDetails(res.data)
     }, [])
 
@@ -21,8 +21,8 @@ function CocktailDetails(props,i) {
     const handleClick = async (whichPostId, i) => {
 
         let res = await actions.likePost(whichPostId)
-        
-       setDetails(res.data)
+        console.log(res.data)
+        setDetails(res.data)
     }
 
     const ShowDetails = () => {
@@ -50,8 +50,8 @@ function CocktailDetails(props,i) {
                         <h2>Instructions</h2>
                         {details.instructions}
 
-                        <h4>Likes : { details.likes}</h4>
-                        <button onClick={(e) => handleClick(details._id,i)}>Like 👍</button>
+                        <h4>Likes : {details.likes && details.likes.length}</h4>
+                        <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}>Like 👍</button>
                     </div>
                 </div>
 

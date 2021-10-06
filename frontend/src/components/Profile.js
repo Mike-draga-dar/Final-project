@@ -37,7 +37,7 @@ function Profile(props) {
             return (
                 <div key={eachDrink._id}>
 
-                    <Link key={eachDrink} to={`/drinks/${drinks._id}`}><h3>{eachDrink.name}</h3>
+                    <Link key={eachDrink} to={`/drinks/${eachDrink._id}`}><h3>{eachDrink.name}</h3>
 
                         <p>Ingredients:</p>
                         <p>{eachDrink.ingredients?.map(eachIngredient => {
@@ -48,6 +48,8 @@ function Profile(props) {
                         <p>Instructions: {eachDrink.instructions}</p>
 
                         <img src={eachDrink.image} alt="drinks-picture"></img>
+
+
                     </Link>
                 </div>
             )

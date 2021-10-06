@@ -22,7 +22,7 @@ function Profile(props) {
 
 
 
-
+    console.log(posts)
 
     const ShowPosts = () => {
         return posts.map(eachDrink => {
@@ -40,6 +40,7 @@ function Profile(props) {
                     <p>Instructions: {eachDrink.instructions}</p>
 
                     <img src={eachDrink.image} alt="drinks-picture"></img>
+
                 </div>
             )
 
@@ -54,7 +55,7 @@ function Profile(props) {
                     <h3>{eachDrink.name}</h3>
 
                     <p>{eachDrink.ingredients?.map(eachIngredient => {
-                        console.log(eachIngredient)
+
                         return (<li>{eachIngredient}</li>)
                     })}</p>
 

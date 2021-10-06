@@ -14,9 +14,9 @@ function AllDrinks(props) {
 
 
     const handleClick = async (whichPostId, i) => {
-        console.log('click', whichPostId)
+
         let res = await actions.likePost(whichPostId)
-        console.log(res.data)
+
         let newDrinks = [...drinks]
         newDrinks[i] = res.data
         setDrinks(newDrinks)

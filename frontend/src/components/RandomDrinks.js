@@ -9,12 +9,12 @@ function RandomImages() {
 
     useEffect(async () => {
 
-        let res = await actions.getAllDrinks({skip:0, limit:450})
+        let res = await actions.getAllDrinks({ skip: 0, limit: 450 })
         setImages(res.data)
 
     }, [])
-let random=Math.floor(Math.random()*images.length)
-        console.log(random)
+    let random = Math.floor(Math.random() * images.length)
+
 
     return (
         <div className="container">
@@ -31,14 +31,14 @@ let random=Math.floor(Math.random()*images.length)
                     <h1>{images?.[random]?.name}</h1>
 
                     <h2>Ingredients</h2>
-                    {images?.[random]?.ingredients.map(eachIngredient=>{
-                        return(
+                    {images?.[random]?.ingredients.map(eachIngredient => {
+                        return (
                             <li>{eachIngredient}</li>
                         )
                     })}
 
                     <h2>Measurements</h2>
-                    {images?.[random]?.measurements.map(eachMeasurement=>{
+                    {images?.[random]?.measurements.map(eachMeasurement => {
                         return (
                             <li>{eachMeasurement}</li>
                         )

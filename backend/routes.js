@@ -30,14 +30,14 @@ router.get('/my-drinks', authorize, async (req, res) => {
 
 })
 
-router.post('/getOneCocktail', authorize, async (req, res) => {
+router.post('/getOneCocktail',  async (req, res) => {
     console.log('did i  hit this!?', req.body)
     let getOneCocktail = await Drink.findById(req.body.drinkId)
     res.json(getOneCocktail)
 })
 
 
-router.get('/get-user', async (req, res) => {
+router.get('/get-user', authorize, async (req, res) => {
     let user = await User.findById(res.locals.user._id)
     res.json(user)
 })
@@ -47,7 +47,7 @@ router.post('/like-drink', authorize, async (req, res) => {
     res.json(updatedDrink)
 })
 
-router.post('/authenticate',authorize, async (req, res) => {
+router.post('/authenticate', async (req, res) => {
     let user = await User.findOne({ email: req.body.email })
     if (!user) { //if the user is not in database create them
         user = await User.create(req.body)

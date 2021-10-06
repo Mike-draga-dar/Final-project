@@ -242,6 +242,33 @@ nav a:hover {
   height: 350px;
 }
 
+/* Like Button */
+
+.like-button {
+  width: 200px;
+  display: flex;
+  border: 3px solid #6dafb8;
+  align-items: center;
+}
+
+.like-left {
+  background-color: #6dafb8;
+  padding: 10px;
+}
+
+.like-left button {
+  background: transparent;
+  border: 0;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+.like-right {
+  text-transform: uppercase;
+  padding: 10px;
+  padding-left: 20px;
+}
+
 /* Profile Page */
 
 .profile {

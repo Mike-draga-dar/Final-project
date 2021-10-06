@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react"
 import axios from 'axios';
 import actions from '../api';
-
+import heart from '../../src/heart.png'
 
 
 
@@ -50,8 +50,21 @@ function CocktailDetails(props, i) {
                         <h2>Instructions</h2>
                         {details.instructions}
 
-                        <h4>Likes : {details.likes && details.likes.length}</h4>
-                        <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}>Like 👍</button>
+                        <br></br>
+                        <br></br>
+                        
+                        <div className="like-button">
+                            <div className="like-left">
+                            <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}><img src={heart}></img></button>
+                            </div>
+
+                            <div className="like-right">
+                                {details.likes && details.likes.length} Likes
+                            </div>
+                        </div>
+
+                        {/* <h4>Likes : {details.likes && details.likes.length}</h4> */}
+                        {/* <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}>Like 👍</button> */}
                     </div>
                 </div>
 

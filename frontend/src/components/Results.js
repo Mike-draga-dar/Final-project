@@ -29,12 +29,12 @@ function Results(props) {
       <div className="all-drinks">
         {drinks.map((drink) => {
           return <Link key={drink._id} to={`/drinks/${drink._id}`}>
-          <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
-          <br></br>
-          {drink.name}<br></br>
-          <br></br>
-          <br></br>
-      </Link>
+            <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
+            <br></br>
+            {drink.name}<br></br>
+            <br></br>
+            <br></br>
+          </Link>
         })
         }
       </div>

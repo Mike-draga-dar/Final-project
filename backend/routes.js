@@ -60,11 +60,13 @@ router.post('/authenticate', async (req, res) => {
 })
 
 router.get('/results', async (req, res) => {
+    console.log("results", req.query)
     let { keyword } = req.query
     let drinks = await Drink.find({
         $or: [
             { name: { $regex: keyword, $options: 'i' } },
-            { ingredients: { $regex: keyword, $options: 'i' } }
+            { ingredients: { $regex: keyword, $options: 'i' } },
+            { instructions: { $regex: keyword, $options: 'i' } }
         ]
     })
     // var result = db.collection('AdSchema').find({

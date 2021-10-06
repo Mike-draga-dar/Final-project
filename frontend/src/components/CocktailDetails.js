@@ -9,7 +9,7 @@ import actions from '../api';
 function CocktailDetails(props,i) {
 
     let [details, setDetails] = useState({})
-    // let [likes, setLikes] = useState([])
+    
 
     useEffect(async () => {
         let res = await actions.getOneCocktail(props.match.params.drinkId)
@@ -21,7 +21,7 @@ function CocktailDetails(props,i) {
     const handleClick = async (whichPostId, i) => {
 
         let res = await actions.likePost(whichPostId)
-        console.log(res.data)
+        
        setDetails(res.data)
     }
 

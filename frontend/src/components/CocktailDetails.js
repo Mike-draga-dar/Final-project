@@ -9,11 +9,11 @@ import actions from '../api';
 function CocktailDetails(props,i) {
 
     let [details, setDetails] = useState({})
-    const [likes, setLikes] = useState([])
+    // let [likes, setLikes] = useState([])
 
     useEffect(async () => {
         let res = await actions.getOneCocktail(props.match.params.drinkId)
-        console.log(res.data)
+        
         setDetails(res.data)
     }, [])
 
@@ -21,10 +21,8 @@ function CocktailDetails(props,i) {
     const handleClick = async (whichPostId, i) => {
 
         let res = await actions.likePost(whichPostId)
-
-        let newLikes = [...likes]
-        newLikes[i] = res.data
-        setLikes(newLikes)
+        console.log(res.data)
+       setDetails(res.data)
     }
 
     const ShowDetails = () => {

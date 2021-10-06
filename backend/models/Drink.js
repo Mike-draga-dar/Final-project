@@ -8,7 +8,7 @@ const drinkSchema = new Schema({
     ingredients: Array,
     measurements: Array,
     // measure: Array,
-    likes: { type: Number, default: 0 },
+    likes: { type: Array },
     userId: { type: Schema.Types.ObjectId, ref: 'User' }
 },
     { timestamps: true }

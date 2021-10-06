@@ -17,6 +17,7 @@ router.get('/all-drinks', async (req, res) => {
 router.post('/new-drink', authorize, async (req, res) => {
     //Every time you put authorize as middleware you'll have the user as res.locals.user
     let newDrink = req.body
+    console.log('new rink', req.body)
     newDrink.userId = res.locals.user._id //How we add the userId to the post document
     let drink = await Drink.create(newDrink)
     res.json(drink)
@@ -43,7 +44,7 @@ router.get('/get-user', authorize, async (req, res) => {
 })
 router.post('/like-drink', authorize, async (req, res) => {
     console.log('did i  hit this!?', req.body)
-    let updatedDrink = await Drink.findByIdAndUpdate(req.body.drinkId, { $inc: { likes: 1 } }, { new: true }).populate('userId')
+    let updatedDrink = await Drink.findByIdAndUpdate(req.body.drinkId, { $addToSet: { likes: res.locals.user._id } }, { new: true }).populate('userId')
     res.json(updatedDrink)
 })
 

@@ -3,20 +3,22 @@ import ReactDOM from "react-dom";
 import { useState } from 'react';
 import axios from 'axios'
 import actions from '../api';
+import noImage from "../noimage.png"
 
 function NewPost(props) {
 
     let [name, setName] = useState('')
     let [instructions, setInstructions] = useState('')
     let [ingredients, setIngredients] = useState([])
-    let [image, setImage] = useState('')
+    let [image, setImage] = useState(noImage)
     let [numIngredients, setNumIngredients] = useState(0)
+    let [measurements, setMeasurements] = useState([])
 
 
 
     const handleSubmit = async e => {
         e.preventDefault()
-        let res = await actions.createNewPost({ name, ingredients, instructions, image })
+        let res = await actions.createNewPost({ name, ingredients, instructions, image, measurements })
         props.history.push('/all-drinks')
     }
 
@@ -78,12 +80,12 @@ function NewPost(props) {
 
                 {/* {Drink Ingredients} */}
                 <br></br>
-                <input onChange={e => setIngredients(e.target.value.trim().split(" "))} placeholder="Ingredients separated by space" className="input-width" />
+                <input onChange={e => setIngredients(e.target.value.trim().split(","))} placeholder="Ingredients separated by comma" className="input-width" />
 
 
                 <br></br>
 
-
+                <input onChange={e => setMeasurements(e.target.value.trim().split(","))} placeholder="Measurements separated by comma" className="input-width" />
 
 
                 <br></br>

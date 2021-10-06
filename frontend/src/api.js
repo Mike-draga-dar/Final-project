@@ -12,8 +12,8 @@ const actions = {
     getAllDrinks: async ({ limit, skip }) => {
         return await axios.get(`${SERVER_URL}/all-drinks?limit=${limit}&skip=${skip}`, createHeader())
     },
-    createNewPost: async ({ name, ingredients, instructions, image }) => {
-        return await axios.post(`${SERVER_URL}/new-drink`, { name, ingredients, instructions, image }, createHeader())
+    createNewPost: async ({ name, ingredients, instructions, image, measurements }) => {
+        return await axios.post(`${SERVER_URL}/new-drink`, { name, ingredients, instructions, image, measurements }, createHeader())
 
     },
     authenticate: async (user) => {

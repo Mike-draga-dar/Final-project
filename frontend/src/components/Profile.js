@@ -2,13 +2,13 @@ import { useContext, useState, useEffect } from 'react';
 import TheContext from '../TheContext';
 import axios from 'axios'
 import actions from '../api'
-
+import { Link } from 'react-router-dom'
 
 
 function Profile(props) {
     const [posts, setPosts] = useState([])
     const [liked, setLiked] = useState([])
-
+    const [drinks, setDrinks] = useState([]);
 
     useEffect(async () => {
         let res = await actions.getMyPosts({})
@@ -20,6 +20,14 @@ function Profile(props) {
         setLiked(res.data)
     }, [])
 
+    const handleClick = async (whichPostId, i) => {
+        console.log('click', whichPostId)
+        let res = await actions.likePost(whichPostId)
+        console.log(res.data)
+        let newDrinks = [...drinks]
+        newDrinks[i] = res.data
+        setDrinks(newDrinks)
+    }
 
 
     console.log(posts)
@@ -29,18 +37,18 @@ function Profile(props) {
             return (
                 <div key={eachDrink._id}>
 
-                    <h3>{eachDrink.name}</h3>
+                    <Link key={eachDrink} to={`/drinks/${drinks._id}`}><h3>{eachDrink.name}</h3>
 
-                    <p>Ingredients:</p>
-                    <p>{eachDrink.ingredients?.map(eachIngredient => {
+                        <p>Ingredients:</p>
+                        <p>{eachDrink.ingredients?.map(eachIngredient => {
 
-                        return (<li key={eachIngredient}>{eachIngredient}</li>)
-                    })}</p>
+                            return (<li key={eachIngredient}>{eachIngredient}</li>)
+                        })}</p>
 
-                    <p>Instructions: {eachDrink.instructions}</p>
+                        <p>Instructions: {eachDrink.instructions}</p>
 
-                    <img src={eachDrink.image} alt="drinks-picture"></img>
-
+                        <img src={eachDrink.image} alt="drinks-picture"></img>
+                    </Link>
                 </div>
             )
 

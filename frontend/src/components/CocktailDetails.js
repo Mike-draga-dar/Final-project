@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { useEffect, useState } from "react"
 import axios from 'axios';
 import actions from '../api';
@@ -9,6 +9,7 @@ import actions from '../api';
 function CocktailDetails(props) {
 
     let [details, setDetails] = useState({})
+    const [drinks, setDrinks] = useState([])
 
     useEffect(async () => {
         let res = await actions.getOneCocktail(props.match.params.drinkId)
@@ -17,8 +18,13 @@ function CocktailDetails(props) {
     }, [])
 
 
-    const handleClick = () => {
-        // let res = await actions.likePost()
+    const handleClick = async (whichPostId, i) => {
+
+        let res = await actions.likePost(whichPostId)
+
+        let newDrinks = [...drinks]
+        newDrinks[i] = res.data
+        setDrinks(newDrinks)
     }
 
     const ShowDetails = () => {
@@ -46,8 +52,8 @@ function CocktailDetails(props) {
                         <h2>Instructions</h2>
                         {details.instructions}
 
-                        <h4>Likes : { }</h4>
-                        <button onClick={(e) => handleClick()}>Like 👍</button>
+                        <h4>Likes : { details.likes}</h4>
+                        <button onClick={(e) => handleClick(details._id)}>Like 👍</button>
                     </div>
                 </div>
 

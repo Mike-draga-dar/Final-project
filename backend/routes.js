@@ -30,7 +30,7 @@ router.get('/my-drinks', authorize, async (req, res) => {
 
 })
 
-router.post('/getOneCocktail',  async (req, res) => {
+router.post('/getOneCocktail', async (req, res) => {
     console.log('did i  hit this!?', req.body)
     let getOneCocktail = await Drink.findById(req.body.drinkId)
     res.json(getOneCocktail)

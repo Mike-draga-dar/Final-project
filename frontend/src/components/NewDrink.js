@@ -72,7 +72,7 @@ function NewPost(props) {
             <form onSubmit={handleSubmit}>
 
                 {/*Drink Name  */}
-                <div className="new-drink-name">Drink Name</div><br></br>
+                <div className="new-drink-input-title">Drink Name</div><br></br>
                 <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width"/><br></br>
                 <br></br>
 
@@ -89,12 +89,12 @@ function NewPost(props) {
                 <br></br>
 
                 {/* Drink Instructions */}
-                <div className="new-drink-name">Drink Instructions</div><br></br>
+                <div className="new-drink-input-title">Drink Instructions</div><br></br>
                 <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" className="input-width" /><br></br>
                 <br></br>
 
                 {/* Drink Image */}
-                <div className="new-drink-name">Drink Image</div><br></br>
+                <div className="new-drink-input-title">Drink Image</div><br></br>
                 <input type="file" accept="image/*" multiple = "false" onChange={handleImageUpload} className="image-button" />
                 <div className="upload-image">
                     <img ref={uploadedImage} />

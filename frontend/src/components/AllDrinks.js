@@ -39,8 +39,10 @@ function Home() {
                 {drinks.map((drink) => {
                     return <Link key={drink._id} to={`/drinks/${drink._id}`}>
                         <img src={drink.image} alt="image" className="all-drinks-img" /><br></br>
+                        <br></br>
                         {drink.name}<br></br>
 
+                        <br></br>
                         <br></br>
                     </Link>
                 })
@@ -57,8 +59,9 @@ function Home() {
             </div>
             <br></br><br></br>
             <ShowDrinks />
-            <button onClick={() => setSkip(Math.max((skip - 10), 0))}>Previous</button>
-            <button onClick={() => setSkip(skip + 10)}>Next</button>
+            <div className="page-buttons">
+                <button className="submit-button" onClick={() => setSkip(Math.max((skip - 10), 0))}>Previous</button> &nbsp; <button className="submit-button" onClick={() => setSkip(skip + 10)}>Next</button>
+            </div>    
         </div>
     );
 }

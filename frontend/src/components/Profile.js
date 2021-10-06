@@ -11,7 +11,7 @@ function Profile(props) {
 
 
     useEffect(async () => {
-        let res = await actions.getMyPosts()
+        let res = await actions.getMyPosts({})
         setPosts(res.data.reverse())
     }, [])
 
@@ -19,7 +19,6 @@ function Profile(props) {
         let res = await actions.likePost()
         setLiked(res.data)
     }, [])
-
 
 
 

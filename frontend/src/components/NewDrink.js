@@ -76,31 +76,11 @@ function NewPost(props) {
                 <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width"/><br></br>
                 <br></br>
 
-                Drink Ingredients
+                {/* {Drink Ingredients} */}
                 <br></br>
                 <input onChange={e=> setIngredients(e.target.value.trim().split(" "))} placeholder="Ingredients separated by space" className="input-width"/>
                 
-                {/* {numIngredients}
-                <button type="button"
-                 onClick={()=>setNumIngredients(numIngredients+1)}>Add Ingredient</button> */}
-                {/* <div className="new-drink-name">Drink Ingredients</div><br></br>
-                {inputList.map((x,i)=>{
-                    return (
-                        
-
-                <input onChange={e => setIngredients(e.target.value)} type="text" placeholder="Ingredients" className="input-width" />
-                          
-                {inputList.length !== 1 && <button type="button"
-                
-                onClick={() => handleRemoveClick(i)}>Remove</button>}
-              {inputList.length - 1 === i && <button type= "button"onClick={handleAddClick}>Add</button>}
-               
             
-                    )
-                })} */}
-
-
-
                 <br></br>
 
                

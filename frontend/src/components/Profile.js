@@ -81,11 +81,15 @@ function Profile(props) {
                     <div className="drink-title">My Drinks</div>
                     <br></br>
                     <br></br>
-                    <ShowPosts />
+                    <div className="all-drinks">
+                        <ShowPosts />
+                    </div>
                 </div>
                 <div className="LikedPosts">
-                    <div className="drink-title">Liked Posts</div>
-                    <LikedPosts />
+                    <div className="drink-title">Liked Drinks</div>
+                    <div className="all-drinks">
+                        <LikedPosts />
+                    </div>
                 </div>
             </div>
         </div>

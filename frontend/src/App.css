@@ -126,7 +126,8 @@ nav a:hover {
   text-align: center;
 }
 
-.search-container input {
+.search-container input,
+button {
   font-size: 0.8em;
   font-weight: 400;
   text-transform: uppercase;

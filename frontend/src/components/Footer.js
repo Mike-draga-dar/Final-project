@@ -17,7 +17,7 @@ function Footer(props) {
     return (
         <footer>
             <div className="container">
-                <div className="logo"><img src={footerLogo}></img></div>
+                <Link to="/"> <div className="logo"><img src={footerLogo}></img></div> </Link>
 
                 <nav>
                     <Link to="/">Home</Link>

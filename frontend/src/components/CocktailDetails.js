@@ -9,7 +9,7 @@ import heart from '../../src/heart.png'
 function CocktailDetails(props, i) {
 
     let [details, setDetails] = useState({})
-    // let [likes, setLikes] = useState([])
+    
 
     useEffect(async () => {
         let res = await actions.getOneCocktail(props.match.params.drinkId)

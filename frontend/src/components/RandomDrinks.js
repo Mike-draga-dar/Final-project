@@ -50,8 +50,7 @@ function RandomImages(props, i) {
                     {images?.[random]?.instructions}
 
 
-                    <h3> Likes:</h3>
-                    <button onClick >Like 👍</button>
+
                 </div>
             </div>
         </div>

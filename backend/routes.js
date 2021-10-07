@@ -82,13 +82,13 @@ router.get('/results', async (req, res) => {
 
 // Get New Drink
 router.get('/get-new-drinks', async (req, res) => {
-    let drinks = await Drink.find().sort({ createdAt: -1 }).limit(4)
+    let drinks = await Drink.find().sort({ createdAt:-1 }).limit(6)
     res.json(drinks)
 })
 
 // Get Random Drink
 router.get('/get-random-drinks', async (req, res) => {
-    let drinks = await Drink.aggregate([{ $sample: { size: 4 } }])
+    let drinks = await Drink.aggregate([ {$sample: {size:6}} ])
     res.json(drinks)
 })
 

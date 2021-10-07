@@ -48,7 +48,7 @@ const actions = {
         return await axios.get(`${SERVER_URL}/get-random-drinks`, createHeader())
     },
     getLikedDrinks: async () => {
-        return await axios.get(`${SERVER_URL}/likedDrink`, createHeader())
+        return await axios.get(`${SERVER_URL}//getLikedDrinks`, createHeader())
     },
 }
 

@@ -15,7 +15,7 @@ function Profile(props) {
         setPosts(res.data.reverse())
 
         let res2 = await actions.getLikedDrinks()
-        console.log(res2.data,)
+        console.log(res2.data)
         setLiked(res2.data)
     }, [])
 
@@ -81,11 +81,15 @@ function Profile(props) {
                     <div className="drink-title">My Drinks</div>
                     <br></br>
                     <br></br>
-                    <ShowPosts />
+                    <div className="all-drinks">
+                        <ShowPosts />
+                    </div>
                 </div>
                 <div className="LikedPosts">
-                    <div className="drink-title">Liked Posts</div>
-                    <LikedPosts />
+                    <div className="drink-title">Liked Drinks</div>
+                    <div className="all-drinks">
+                        <LikedPosts />
+                    </div>
                 </div>
             </div>
         </div>

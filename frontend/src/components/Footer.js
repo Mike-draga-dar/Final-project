@@ -32,7 +32,7 @@ function Footer(props) {
                     <Link to="/random-drinks">Random Drink</Link>
                 </nav>
 
-                <p>Created by <Link to="https://github.com/darioformoso" target="_blank">Dario</Link>, <Link to="https://github.com/DraganCicic" target="_blank">Dragan</Link> & <Link to="https://github.com/michaelporreca" target="_blank">Michael</Link></p>
+                <p>Created by <a href="https://github.com/darioformoso" target="_blank">Dario</a>, <a href="https://github.com/DraganCicic" target="_blank">Dragan</a> & <a href="https://github.com/michaelporreca" target="_blank">Michael</a></p>
             </div>
         </footer>
     );

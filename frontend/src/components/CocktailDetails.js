@@ -36,8 +36,6 @@ function CocktailDetails(props, i) {
                 <div className="drink">
                     <div className="drink-photo">
                         <img src={details.image} alt="Cocktail Image" className="single-drink-img"></img>
-
-
                     </div>
                     <div className="drink-info">
                         <h1>{details.name}</h1>

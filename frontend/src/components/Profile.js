@@ -83,8 +83,7 @@ function Profile(props) {
                     <ShowPosts />
                 </div>
                 <div className="LikedPosts">
-                    {/* <LikedPosts/> */}
-                    <h1>Liked Posts</h1>
+                    <div className="drink-title">Liked Posts</div>
                 </div>
             </div>
         </div>

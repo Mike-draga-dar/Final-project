@@ -40,6 +40,12 @@ const actions = {
     },
     searchDrink: async (keyword) => {
         return await axios.get(`${SERVER_URL}/results?keyword=${keyword}`)
+    },
+    getNewDrinks: async () => {
+        return await axios.get(`${SERVER_URL}/get-new-drinks`, createHeader())
+    },
+    getRandomDrinks: async () => {
+        return await axios.get(`${SERVER_URL}/get-random-drinks`, createHeader())
     }
 }
 

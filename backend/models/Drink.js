@@ -4,7 +4,7 @@ const drinkSchema = new Schema({
     name: String,
     // drink: String,
     instructions: String,
-    image: { type: String, default: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png" },
+    image: { type: String },
     ingredients: Array,
     measurements: Array,
     // measure: Array,

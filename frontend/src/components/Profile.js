@@ -57,10 +57,12 @@ function Profile(props) {
             return (
                 <div className="all-drinks">
                     <div key={eachDrink._id}>
-                        <img src={eachDrink.image} alt="drinks-picture" className="all-drinks-img"></img><br></br>
+                        <Link key={eachDrink} to={`/drinks/${eachDrink._id}`}>
+                            <img src={eachDrink.image} alt="drinks-picture" className="all-drinks-img"></img><br></br>
                         {eachDrink.name}<br></br>
                         <br></br>
                         <br></br>
+                        </Link>
                     </div>
                 </div>
             )
@@ -87,6 +89,8 @@ function Profile(props) {
                 </div>
                 <div className="LikedPosts">
                     <div className="drink-title">Liked Drinks</div>
+                    <br></br>
+                    <br></br>
                     <div className="all-drinks">
                         <LikedPosts />
                     </div>

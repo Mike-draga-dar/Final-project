@@ -15,7 +15,7 @@ function Profile(props) {
         setPosts(res.data.reverse())
 
         let res2 = await actions.getLikedDrinks()
-        console.log(res2.data, ' ?????')
+        console.log(res2.data,)
         setLiked(res2.data)
     }, [])
 
@@ -31,7 +31,7 @@ function Profile(props) {
     }
 
 
-    console.log(posts)
+
 
     const ShowPosts = () => {
         return posts.map(eachDrink => {

@@ -80,6 +80,17 @@ router.get('/results', async (req, res) => {
     return res.json(drinks)
 })
 
+// Get New Drink
+router.get('/get-new-drinks', async (req, res) => {
+    let drinks = await Drink.find().sort({ createdAt: -1 }).limit(4)
+    res.json(drinks)
+})
+
+// Get Random Drink
+router.get('/get-random-drinks', async (req, res) => {
+    let drinks = await Drink.aggregate([{ $sample: { size: 4 } }])
+    res.json(drinks)
+})
 
 //Middleware >>> Put this in the middle of any route where you want to authorize
 function authorize(req, res, next) {

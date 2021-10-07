@@ -75,24 +75,24 @@ function NewPost(props) {
 
                 {/*Drink Name  */}
                 <div className="new-drink-input-title">Drink Name</div><br></br>
-                <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width" /><br></br>
+                <input onChange={e => setName(e.target.value)} type="text" placeholder="Drink Name" className="input-width" required /><br></br>
 
                 {/* {Drink Ingredients} */}
                 <br></br>
                 <div className="new-drink-input-title">Drink Ingredients</div><br></br>
-                <input onChange={e => setIngredients(e.target.value.trim().split(","))} placeholder="Ingredients separated by comma" className="input-width" /><br></br>
+                <input onChange={e => setIngredients(e.target.value.trim().split(","))} placeholder="Ingredients separated by comma" className="input-width" required /><br></br>
 
 
                 <br></br>
                 <div className="new-drink-input-title">Drink Measurements</div><br></br>
-                <input onChange={e => setMeasurements(e.target.value.trim().split(","))} placeholder="Measurements separated by comma" className="input-width" /><br></br>
+                <input onChange={e => setMeasurements(e.target.value.trim().split(","))} placeholder="Measurements separated by comma" className="input-width" required /><br></br>
 
 
                 <br></br>
 
                 {/* Drink Instructions */}
                 <div className="new-drink-input-title">Drink Instructions</div><br></br>
-                <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" className="input-width" /><br></br>
+                <input onChange={e => setInstructions(e.target.value)} type="text" placeholder="Instructions" className="input-width" required /><br></br>
                 <br></br>
 
                 {/* Drink Image */}

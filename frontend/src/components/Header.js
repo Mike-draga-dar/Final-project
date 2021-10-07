@@ -64,7 +64,7 @@ function Header(props) {
 
             <div className="search-container">
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Search for drinks" className="search-input"></input> <input className="search-button" value="Search" type="submit"></input>
+                    <input type="text" placeholder="" className="search-input"></input> <input className="search-button" value="Search" type="submit"></input>
                 </form>
             </div>
 

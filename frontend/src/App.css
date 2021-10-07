@@ -126,7 +126,8 @@ nav a:hover {
   text-align: center;
 }
 
-.search-container input {
+.search-container input,
+button {
   font-size: 0.8em;
   font-weight: 400;
   text-transform: uppercase;
@@ -395,6 +396,10 @@ footer nav a {
 /* Mobile CSS */
 
 @media only screen and (max-width: 600px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
   /* Google Login Auth */
 
   #auth {
@@ -467,14 +472,23 @@ footer nav a {
   }
 
   .search-input {
-    width: 50%;
+    width: 40%;
+  }
+
+  .search-button {
+    width: 30%;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
   }
 
   /* Content */
 
   .container {
     margin: 0px auto;
-    width: 100%;
+    width: 90%;
   }
 
   /* Red Header Box */
@@ -508,7 +522,7 @@ footer nav a {
   }
 
   .all-drinks-img {
-    width: 200px;
+    width: 100%;
   }
 
   /* Single Drink Page */
@@ -520,6 +534,7 @@ footer nav a {
   .drink-photo {
     width: 100%;
     padding-bottom: 25px;
+    position: relative;
   }
 
   .drink-info {

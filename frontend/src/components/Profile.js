@@ -13,12 +13,13 @@ function Profile(props) {
     useEffect(async () => {
         let res = await actions.getMyPosts({})
         setPosts(res.data.reverse())
+
+        let res2 = await actions.getLikedDrinks()
+        console.log(res2.data, ' ?????')
+        setLiked(res2.data)
     }, [])
 
-    useEffect(async () => {
-        let res = await actions.likePost()
-        setLiked(res.data)
-    }, [])
+
 
     const handleClick = async (whichPostId, i) => {
         console.log('click', whichPostId)
@@ -38,12 +39,12 @@ function Profile(props) {
                 <div className="all-drinks">
                     <div key={eachDrink._id}>
 
-                    <Link key={eachDrink} to={`/drinks/${eachDrink._id}`}>
-                    <img src={eachDrink.image} alt="drinks-picture" className="all-drinks-img"></img><br></br>
-                    {eachDrink.name}<br></br>
-                    <br></br>
-                    <br></br>
-                    </Link>
+                        <Link key={eachDrink} to={`/drinks/${eachDrink._id}`}>
+                            <img src={eachDrink.image} alt="drinks-picture" className="all-drinks-img"></img><br></br>
+                            {eachDrink.name}<br></br>
+                            <br></br>
+                            <br></br>
+                        </Link>
                     </div>
                 </div>
             )
@@ -56,10 +57,10 @@ function Profile(props) {
             return (
                 <div className="all-drinks">
                     <div key={eachDrink._id}>
-                    <img src={eachDrink.image} alt="drinks-picture" className="all-drinks-img"></img><br></br>
-                    {eachDrink.name}<br></br>
-                    <br></br>
-                    <br></br>
+                        <img src={eachDrink.image} alt="drinks-picture" className="all-drinks-img"></img><br></br>
+                        {eachDrink.name}<br></br>
+                        <br></br>
+                        <br></br>
                     </div>
                 </div>
             )
@@ -75,7 +76,7 @@ function Profile(props) {
             <div className="profile">
                 <img src={props.user?.imageUrl} className="profile-picture" /><br></br>
                 <h1>{props.user?.name}</h1>
-                
+
                 <div className="MyPosts">
                     <div className="drink-title">My Drinks</div>
                     <br></br>
@@ -84,6 +85,7 @@ function Profile(props) {
                 </div>
                 <div className="LikedPosts">
                     <div className="drink-title">Liked Posts</div>
+                    <LikedPosts />
                 </div>
             </div>
         </div>

@@ -59,6 +59,11 @@ router.post('/authenticate', async (req, res) => {
 
 
 })
+router.get('/getLikedDrinks', authorize, async (req, res) => {
+    let likedDrinks = await Drink.find({ likes: { $in: res.locals.user._id } })
+    console.log('likedDrinks')
+    res.json(likedDrinks)
+})
 
 router.get('/results', async (req, res) => {
     console.log("results", req.query)

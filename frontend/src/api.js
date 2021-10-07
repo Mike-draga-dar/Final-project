@@ -40,7 +40,10 @@ const actions = {
     },
     searchDrink: async (keyword) => {
         return await axios.get(`${SERVER_URL}/results?keyword=${keyword}`)
-    }
+    },
+    getLikedDrinks: async () => {
+        return await axios.get(`${SERVER_URL}/getLikedDrinks`, createHeader())
+    },
 }
 
 

@@ -59,6 +59,11 @@ router.post('/authenticate', async (req, res) => {
 
 
 })
+router.get('/getLikedDrinks', authorize, async (req, res) => {
+    let likedDrinks = await Drink.find({ likes: { $in: res.locals.user._id } })
+    console.log('likedDrinks')
+    res.json(likedDrinks)
+})
 
 router.get('/results', async (req, res) => {
     console.log("results", req.query)
@@ -77,13 +82,21 @@ router.get('/results', async (req, res) => {
 
 // Get New Drink
 router.get('/get-new-drinks', async (req, res) => {
+<<<<<<< HEAD
     let drinks = await Drink.find().sort({ createdAt:-1 }).limit(6)
+=======
+    let drinks = await Drink.find().sort({ createdAt: -1 }).limit(4)
+>>>>>>> d57efd96c4668203d164e6d1c0e6173b403629f5
     res.json(drinks)
 })
 
 // Get Random Drink
 router.get('/get-random-drinks', async (req, res) => {
+<<<<<<< HEAD
     let drinks = await Drink.aggregate([ {$sample: {size:6}} ])
+=======
+    let drinks = await Drink.aggregate([{ $sample: { size: 4 } }])
+>>>>>>> d57efd96c4668203d164e6d1c0e6173b403629f5
     res.json(drinks)
 })
 

@@ -10,7 +10,7 @@ function Home() {
 
     const [drinks, setDrinks] = useState([]);
     let [limit, setLimit] = useState(10);
-    let [skip, setSkip] = useState(0)
+    let [skip, setSkip] = useState(Math.floor(Math.random() * 100))
 
 
 
@@ -61,7 +61,7 @@ function Home() {
             <ShowDrinks />
             <div className="page-buttons">
                 <button className="submit-button" onClick={() => setSkip(Math.max((skip - 10), 0))}>Previous</button> &nbsp; <button className="submit-button" onClick={() => setSkip(skip + 10)}>Next</button>
-            </div>    
+            </div>
         </div>
     );
 }

@@ -9,7 +9,7 @@ import CocktailDetails from "./CocktailDetails"
 function Home() {
 
     const [drinks, setDrinks] = useState([]);
-    let [limit, setLimit] = useState(10);
+    let [limit, setLimit] = useState(12);
     let [skip, setSkip] = useState(Math.floor(Math.random() * 100))
 
 

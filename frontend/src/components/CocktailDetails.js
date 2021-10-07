@@ -53,7 +53,7 @@ function CocktailDetails(props, i) {
                         
                         <div className="like-button">
                             <div className="like-left">
-                            <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}><img src={heart}></img></button>
+                            <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}><img src={heart} id="like-heart"></img></button>
                             </div>
 
                             <div className="like-right">
@@ -61,8 +61,6 @@ function CocktailDetails(props, i) {
                             </div>
                         </div>
 
-                        {/* <h4>Likes : {details.likes && details.likes.length}</h4> */}
-                        {/* <button disabled={details.likes && details.likes.includes(props.user._id)} onClick={(e) => handleClick(details._id, i)}>Like 👍</button> */}
                     </div>
                 </div>
 

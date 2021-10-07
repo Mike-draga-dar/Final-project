@@ -252,6 +252,10 @@ button {
   align-items: center;
 }
 
+#like-heart:hover {
+  content: url("../src/heart2.png");
+}
+
 .like-left {
   background-color: #6dafb8;
   padding: 10px;

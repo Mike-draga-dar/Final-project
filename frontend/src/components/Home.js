@@ -52,9 +52,27 @@ function Home(props) {
     }
 
     return (
-        <div>
-            <ShowNewDrinks />
-            <ShowRandomDrinks />
+        <div className="container">
+            <div className="red-header">
+                <p>New Drinks</p>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="all-drinks">
+                <ShowNewDrinks />
+            </div>
+
+            <br></br>
+            <br></br>
+
+            <div className="red-header">
+                <p>Random Drinks</p>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="all-drinks">
+                <ShowRandomDrinks />
+            </div>
         </div>
     );
 }

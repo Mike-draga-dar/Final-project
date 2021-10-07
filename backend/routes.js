@@ -82,21 +82,13 @@ router.get('/results', async (req, res) => {
 
 // Get New Drink
 router.get('/get-new-drinks', async (req, res) => {
-<<<<<<< HEAD
-    let drinks = await Drink.find().sort({ createdAt:-1 }).limit(6)
-=======
     let drinks = await Drink.find().sort({ createdAt: -1 }).limit(4)
->>>>>>> d57efd96c4668203d164e6d1c0e6173b403629f5
     res.json(drinks)
 })
 
 // Get Random Drink
 router.get('/get-random-drinks', async (req, res) => {
-<<<<<<< HEAD
-    let drinks = await Drink.aggregate([ {$sample: {size:6}} ])
-=======
     let drinks = await Drink.aggregate([{ $sample: { size: 4 } }])
->>>>>>> d57efd96c4668203d164e6d1c0e6173b403629f5
     res.json(drinks)
 })
 
@@ -110,7 +102,7 @@ function authorize(req, res, next) {
                 next()
             } else {
                 res.status(403).json({ message: err })
-                //throw new Error({ message: "ahhh" })
+                
             }
 
         })

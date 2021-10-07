@@ -60,10 +60,12 @@ function RandomImages(props, i) {
                     <h2>Instructions</h2>
                     {drink?.instructions}
 
+                    <br></br>
+                    <br></br>
 
                     <div className="like-button">
                         <div className="like-left">
-                            <button disabled={drink?.likes && drink?.likes.includes(props.user._id)} onClick={(e) => handleClick(drink?._id, i)}><img src={heart}></img></button>
+                            <button disabled={drink?.likes && drink?.likes.includes(props.user._id)} onClick={(e) => handleClick(drink?._id, i)}><img src={heart} id="like-heart"></img></button>
                         </div>
 
                         <div className="like-right">
